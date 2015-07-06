@@ -1,0 +1,110 @@
+0: 1/347	    SF/0 LA/1 SEA/2 DNV/3 ABQ/4 HUS/5  CHI/6 NY/7  ORL/8   DC/9      
+0: 2/649
+0: 3/950
+1: 0/347
+1: 4/672
+2: 0/649
+2: 3/1021
+2: 6/1737
+3: 0/950
+3: 4/449
+3: 2/1021
+3: 6/917
+3: 5/763
+3: 9/1493
+4: 1/672
+4: 3/449
+4: 5/754
+5: 3/763
+5: 8/849
+5: 4/754
+6: 2/1737
+6: 3/917
+6: 7/714
+7: 9/206
+7: 6/714
+8: 9/756
+8: 5/849
+9: 8/756
+9: 7/206
+9: 3/1493
+
+from: SF
+to: LA
+distance: 347
+to: SEA
+distance: 649
+to: DNV
+distance: 950
+
+from: LA
+to: SF
+distance: 347
+to: ABQ
+distance: 672
+
+from: SEA
+to: SF
+distance: 649
+to: DNV
+distance: 1021
+to: CHI
+distance: 1737
+
+from: DNV
+to: SF
+distance: 950
+to: ABQ
+distance: 449
+to: SEA
+distance: 1021
+to: CHI
+distance: 917
+to: HUS
+distance: 763
+to: DC
+distance: 1493
+
+from: ABQ
+to: LA
+distance: 672
+to: DNV
+distance: 449
+to: HUS
+distance: 754
+
+from: HUS
+to: DNV
+distance: 763
+to: ORL
+distance: 849
+to: ABQ
+distance: 754
+
+from: CHI
+to: SEA
+distance: 1737
+to: DNV
+distance: 917
+to: NY
+distance: 714
+
+from: NY
+to: DC
+distance: 206
+to: CHI
+distance: 714
+
+from: ORL
+to: DC
+distance: 756
+to: HUS 
+distance: 849
+
+from: DC
+to: ORL
+distance: 756
+to: NY
+distance: 206
+to: DNV
+distance: 1493

@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<!-- saved from url=(0072)https://usfca.instructure.com/courses/1479071/assignments/6510355#submit -->
+<html class="not-ie " lang="en"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>Paper 11: Cassandra - A Decentralized Structured Storage System</title>
+  <!--[if lte IE 8]> <meta http-equiv=refresh content="0; URL=/ie-8-is-not-supported.html" /> <![endif]-->
+
+  <link rel="icon" type="image/x-icon" href="https://usfca.instructure.com/favicon.ico">
+  <link rel="apple-touch-icon" href="https://usfca.instructure.com/apple-touch-icon.png">
+
+
+  
+  <link href="./Paper 11_ Cassandra - A Decentralized Structured Storage System_files/vendor_legacy_normal_contrast.css" media="all" rel="stylesheet" type="text/css">
+<link href="./Paper 11_ Cassandra - A Decentralized Structured Storage System_files/common_legacy_normal_contrast.css" media="all" rel="stylesheet" type="text/css">
+  
+  <meta content="app-id=480883488" name="apple-itunes-app">
+<meta content="app-id=com.instructure.candroid" name="google-play-app">
+  <link href="./Paper 11_ Cassandra - A Decentralized Structured Storage System_files/assignments_legacy_normal_contrast.css" media="all" rel="stylesheet" type="text/css">
+<link href="./Paper 11_ Cassandra - A Decentralized Structured Storage System_files/tinymce_legacy_normal_contrast.css" media="all" rel="stylesheet" type="text/css">
+<link href="./Paper 11_ Cassandra - A Decentralized Structured Storage System_files/learning_outcomes_legacy_normal_contrast.css" media="all" rel="stylesheet" type="text/css">
+  
+  <link href="./Paper 11_ Cassandra - A Decentralized Structured Storage System_files/overrides.css" media="all" rel="stylesheet" type="text/css">
+  <script type="text/javascript" async="" src="./Paper 11_ Cassandra - A Decentralized Structured Storage System_files/ga.js"></script><script>
+    // listen for any clicks on links that have href="#" and queue them to be fired on dom ready.
+      function _earlyClick(e){
+        var cur = e.target || e.srcElement;
+        while ( cur && cur.ownerDocument ) {
+          if ( cur.getAttribute('href') == '#' ) {
+            e.preventDefault();
+            _earlyClick.clicks = _earlyClick.clicks || [];
+            _earlyClick.clicks.push(cur);
+            break;
+          }
+          cur = cur.parentNode;
+        }
+      }
+      document.addEventListener('click', _earlyClick);
+  </script>
+<style></style><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="compiled/tinymce" src="./Paper 11_ Cassandra - A Decentralized Structured Storage System_files/tinymce.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="vendor/timezone/America/Los_Angeles" src="./Paper 11_ Cassandra - A Decentralized Structured Storage System_files/Los_Angeles.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="vendor/timezone/en_US" src="./Paper 11_ Cassandra - A Decentralized Structured Storage System_files/en_US.js"></script><style>/* From: editor/KeyboardShortcuts */
+.tinymce-keyboard-shortcuts-toggle{margin-right:5px;}ul.tinymce-keyboard-shortcuts{list-style:none;margin:0;}ul.tinymce-keyboard-shortcuts code{display:inline-block;color:#123583;background:none;border:none;font-weight:bold;font-size:inherit;}
+/* From: MoveOutcomeDialog */
+.MoveDialog__folderItem--selected{background-color:#effaff;}.MoveDialog__folderItem--focused>.treeLabel{background-color:#effaff;}
+/* From: PaginatedView */
+.paginatedView-loading{text-align:center;color:#e9e9e9;font-size:26px;background:url("/images/load.gif") no-repeat 50% 80%;padding-bottom:56px;}
+/* From: TreeBrowser */
+.tree{font-size:12px;}.tree,.tree ul{margin:0;padding:0;list-style:none;}.tree li,.tree ul li{margin:0;padding:0;}.tree ul{margin-left:8px;}.tree li a{padding-bottom:2px;display:-webkit-flex;display:-ms-flexbox;display:flex;white-space:nowrap;}.tree li a.active{background-color:#d6ecfc;}.tree .preview-thumbnail-holder{display:inline-block;width:42px;height:42px;padding-right:6px;}.tree .preview-thumbnail-holder .preview-thumbnail{max-width:100%;max-height:100%;}.tree .icon-folder:before{font-size:11px;}.tree i[class*=icon-],.tree i[class^=icon-]{color:#333;}.tree .icon-mini-arrow-right{transition:-webkit-transform 0.2s;transition:transform 0.2s;}.tree .expanded .icon-mini-arrow-right{-webkit-transform:rotate(90deg);transform:rotate(90deg);}</style><style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head>
+
+
+<body class="with-left-side with-right-side assignments context-course_1479071 webkit chrome no-touch" cz-shortcut-listen="true">
+
+<ul role="alert" aria-live="assertive" id="flash_message_holder"></ul>
+<div role="alert" aria-live="assertive" id="flash_screenreader_holder" class="screenreader-only"></div>
+
+
+<div id="application">
+  <noscript>&lt;div role="alert" class="ic-flash-static ic-flash-error"&gt;&lt;h1&gt;You need to have JavaScript enabled in order to access this site.&lt;/h1&gt;&lt;/div&gt;</noscript>
+
+
+  <div id="header" class="no-print ">
+    <div id="header-inner">
+      <a href="https://usfca.instructure.com/courses/1479071/assignments/6510355#content" id="skip_navigation_link">Skip To Content</a>
+      <a id="header-logo" href="https://usfca.instructure.com/">My Dashboard</a>
+      <b id="header-logo-secondary"></b>
+      <div id="topbar" role="navigation" aria-label="User Menu">
+    <ul id="identity">
+      <li class="user_name"><a href="https://usfca.instructure.com/about/4130113">Yi Xu</a></li>
+      <li class="first inbox">
+        <a href="https://usfca.instructure.com/conversations?">
+          <span>Inbox</span>
+              <b class="unread-messages-count" style="display: none;">0</b>
+        </a>
+      </li>
+      <li><a href="https://usfca.instructure.com/profile/settings">Settings</a></li>
+    <li class="user_id" style="display: none;">4130113</li>
+    <li class="course_id" style="display: none;">1479071</li>
+    <li id="current_context_code" style="display: none;">course_1479071</li>
+    <li class="user_long_name" style="display: none;">Yi Xu</li>
+    <li class="logout">
+      <form accept-charset="UTF-8" action="https://usfca.instructure.com/logout" id="identity-logout-form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="_method" type="hidden" value="delete"><input name="authenticity_token" type="hidden" value="mKP0077iykYcZ+TWI41F/stYB3Eyim0ai6/QkWVZMfrQyd+k9pitHkYLi+ZPuXSUmS1hE3XbHV755ZvaLAwFng=="></div>
+        <a href="https://usfca.instructure.com/logout" onclick="document.getElementById(&#39;identity-logout-form&#39;).submit(); return false">Logout</a>
+</form>    </li>
+    <li id="identity-help-container"><a href="http://help.instructure.com/" class="support_url help_dialog_trigger" data-track-category="help system" data-track-label="help button">Help</a></li>
+</ul>
+
+</div>
+
+      
+        <ul role="navigation" id="menu" aria-label="Main Navigation">
+    <li id="courses_menu_item" class="menu-item">
+      <a href="https://usfca.instructure.com/courses" class="menu-item-title">
+  Courses &amp; Groups  <span class="menu-item-title-icon"></span> <i class="icon-mini-arrow-down"></i>
+
+</a>
+<div class="menu-item-drop">
+  
+  <table cellspacing="0">
+    <tbody><tr>
+      <td class="menu-item-drop-column" id="menu_enrollments">
+  <div class="menu-item-header-container">
+    <span class="menu-item-heading">
+      My Courses
+    </span>
+    <div class="menu-item-customize">
+      <a href="https://usfca.instructure.com/courses" class="customListOpen">View All or Customize (4)</a>
+    </div>
+  </div>
+  <ul class="menu-item-drop-column-list">
+    <li class="customListItem" data-id="1259370">
+  <a href="https://usfca.instructure.com/courses/1259370">
+    <span class="name ellipsis" title="CS Graduate Students - CS Graduate Students">CS Graduate Students</span>
+      <span class="subtitle ellipsis enrollment_term menu-item-drop-float-right"></span>
+    <span class="subtitle ellipsis">Enrolled as: Student</span>
+  </a>
+</li>
+<li class="customListItem" data-id="1479071">
+  <a href="https://usfca.instructure.com/courses/1479071">
+    <span class="name ellipsis" title="Operating Systems (Spring 2015) - CS-636-01">Operating Systems (Spring 2015)</span>
+      <span class="subtitle ellipsis enrollment_term menu-item-drop-float-right">Spring 2015</span>
+    <span class="subtitle ellipsis">Enrolled as: Student</span>
+  </a>
+</li>
+<li class="customListItem" data-id="1479075">
+  <a href="https://usfca.instructure.com/courses/1479075">
+    <span class="name ellipsis" title="Practicum - CS-695-01">Practicum</span>
+      <span class="subtitle ellipsis enrollment_term menu-item-drop-float-right">Spring 2015</span>
+    <span class="subtitle ellipsis">Enrolled as: Student</span>
+  </a>
+</li>
+<li class="customListItem" data-id="1479070">
+  <a href="https://usfca.instructure.com/courses/1479070">
+    <span class="name ellipsis" title="Principles of Software of Development (Spring 2015) - CS-601-01">Principles of Software of Development (Spring 2015)</span>
+      <span class="subtitle ellipsis enrollment_term menu-item-drop-float-right">Spring 2015</span>
+    <span class="subtitle ellipsis">Enrolled as: Student</span>
+  </a>
+</li>
+
+  </ul>
+</td>
+
+      
+      
+    </tr>
+  </tbody></table>
+  
+</div>
+
+    </li>
+    <li id="grades_menu_item" class="menu-item">
+      <a href="https://usfca.instructure.com/grades" class="menu-item-no-drop">
+        Grades
+        
+      </a>
+    </li>
+    <li id="calendar_menu_item" class="menu-item">
+      <a href="https://usfca.instructure.com/calendar" class="menu-item-no-drop">
+        Calendar
+        
+      </a>
+    </li>
+    
+  </ul>
+
+    </div>
+  </div>
+
+  <div id="instructure_ajax_error_box">
+    <div style="text-align: right; background-color: #fff;"><a href="https://usfca.instructure.com/courses/1479071/assignments/6510355#" class="close_instructure_ajax_error_box_link">Close</a></div>
+    <iframe id="instructure_ajax_error_result" src="about:blank" style="border: 0;"></iframe>
+  </div>
+
+  
+
+  <div id="wrapper-container">
+    <div id="wrapper">      
+        <div id="left-side" class="list-view">
+            <div class="h1" id="section-tabs-header">
+              CS-636-01
+                <span id="section-tabs-header-subtitle" class="ellipsis">Spring 2015</span>
+            </div>
+          <nav role="navigation" aria-label="context"><ul id="section-tabs"><li class="section "><a href="https://usfca.instructure.com/courses/1479071" class="home">Home</a></li><li class="section "><a href="https://usfca.instructure.com/courses/1479071/assignments" class="assignments active" aria-label="Course Assignments">Assignments</a></li><li class="section "><a href="https://usfca.instructure.com/courses/1479071/discussion_topics" class="discussions">Discussions</a></li><li class="section "><a href="https://usfca.instructure.com/courses/1479071/grades" class="grades" aria-label="Course Grades">Grades</a></li><li class="section "><a href="https://usfca.instructure.com/courses/1479071/users" class="people">People</a></li><li class="section "><a href="https://usfca.instructure.com/courses/1479071/assignments/syllabus" class="syllabus">Syllabus</a></li><li class="section "><a href="https://usfca.instructure.com/courses/1479071/conferences" class="conferences">Conferences</a></li><li class="section "><a href="https://usfca.instructure.com/courses/1479071/collaborations" class="collaborations">Collaborations</a></li><li class="section "><a href="https://usfca.instructure.com/courses/1479071/external_tools/19368" class="context_external_tool_19368">Chat</a></li><li class="section "><a href="https://usfca.instructure.com/courses/1479071/external_tools/109201" class="context_external_tool_109201">EchoCenter</a></li></ul></nav>
+      </div>
+      <div id="main" style="min-height: 450px;">
+        <div id="not_right_side">
+          <div id="content-wrapper">
+            <nav aria-label="breadcrumbs" id="breadcrumbs" role="navigation"><ul><li class="home"><a href="https://usfca.instructure.com/"><span class="ellipsible">      <i class="icon-home standalone-icon" title="My Dashboard">
+        <span class="screenreader-only">My Dashboard</span>
+      </i>
+</span></a></li><li><a href="https://usfca.instructure.com/courses/1479071"><span class="ellipsible">CS-636-01</span></a></li><li><a href="https://usfca.instructure.com/courses/1479071/assignments"><span class="ellipsible">Assignments</span></a></li><li><a href="https://usfca.instructure.com/courses/1479071/assignments/6510355"><span class="ellipsible">Paper 11: Cassandra - A Decentralized Structured Storage System</span></a></li></ul></nav>
+            
+            <div id="content" role="main" class="container-fluid">
+              
+
+
+<div id="assignment_show" class="assignment content_underline_links">
+    <!--Student View-->
+    <h1 class="title">
+      Paper 11: Cassandra - A Decentralized Structured Storage System
+    </h1>
+    <ul class="student-assignment-overview">
+      <li>
+        <span class="title">Due</span>
+        <span class="value">
+          <span class="date_text">
+                <span class="display_date">Today</span> by 
+                <span class="display_time">11:59am</span>
+          </span>
+        </span>
+      </li>
+      <li>
+        <span class="title">Points</span>
+        <span class="value">100</span>
+      </li>
+        <li>
+          <span class="title">Submitting</span>
+          <span class="value">a text entry box</span>
+        </li>
+      
+      <div class="clear"></div>
+    </ul>
+
+  <div class="clear"></div>
+
+
+  <div class="clear"></div>
+
+  <div class="description user_content student-version enhanced">No Content</div>
+
+
+  <div style="display: none;">
+    <span class="timestamp">1430420340</span>
+    <span class="due_date_string">04/30/2015</span>
+    <span class="due_time_string">11:59am</span>
+  </div>
+</div>
+
+
+  <div id="submit_assignment" data-context_code="course_1479071" data-asset_string="assignment_6510355">
+  <div class="content ui-tabs ui-widget ui-widget-content ui-corner-all" id="submit_assignment_tabs">
+    <ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">
+        <li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active" role="tab" tabindex="0" aria-controls="submit_online_text_entry_form" aria-labelledby="ui-id-3" aria-selected="true"><a href="https://usfca.instructure.com/courses/1479071/assignments/6510355#submit_online_text_entry_form" class="submit_online_text_entry_option ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-3">Text Entry</a></li>
+    </ul>
+
+    <form accept-charset="UTF-8" action="https://usfca.instructure.com/courses/1479071/assignments/6510355/submissions" class="submit_assignment_form ui-tabs-panel ui-widget-content ui-corner-bottom" id="submit_online_text_entry_form" method="post" aria-labelledby="ui-id-3" role="tabpanel" aria-expanded="true" aria-hidden="false"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="nQ5ha9e2BMb6M3S/TWWFH/AcFVGS+crzvpABGzavQAfVZEocn8xjnqBfG48hUbR1omlzM9WourfM2kpQf/p0Yw=="></div>
+    <input id="submission_submission_type" name="submission[submission_type]" type="hidden" value="online_text_entry">
+    <table class="formtable" style="width: 100%;">
+      <tbody><tr>
+        <td>
+        Copy and paste or type your submission right here.
+            
+        </td>
+      </tr><tr>
+        <td>
+          <div style="text-align: right; font-size: 0.8em;">
+            <a class="tinymce-keyboard-shortcuts-toggle" href="https://usfca.instructure.com/courses/1479071/assignments/6510355#" title="Open Help Menu"><i class="icon-info"></i><span class="screenreader-only">Keyboard Shortcuts</span></a><a class="switch_text_entry_submission_views" href="https://usfca.instructure.com/courses/1479071/assignments/6510355#">HTML Editor</a>
+            <a class="switch_text_entry_submission_views" href="https://usfca.instructure.com/courses/1479071/assignments/6510355#" style="display:none">Rich Content Editor</a>
+          </div>
+          <div id="mceu_28" class="mce-tinymce mce-container mce-panel" hidefocus="1" tabindex="-1" role="application" style="visibility: hidden; border-width: 1px;"><div id="mceu_28-body" class="mce-container-body mce-stack-layout"><div id="mceu_29" class="mce-container mce-menubar mce-toolbar mce-first mce-stack-layout-item" role="menubar" style="border-width: 0px 0px 1px; display: none;"><div id="mceu_29-body" class="mce-container-body mce-flow-layout"><div id="mceu_30" class="mce-widget mce-btn mce-menubtn mce-first mce-flow-layout-item" tabindex="-1" aria-labelledby="mceu_30" role="menuitem" aria-haspopup="true"><button id="mceu_30-open" role="presentation" type="button" tabindex="-1"><span>File</span> <i class="mce-caret"></i></button></div><div id="mceu_31" class="mce-widget mce-btn mce-menubtn mce-flow-layout-item" tabindex="-1" aria-labelledby="mceu_31" role="menuitem" aria-haspopup="true"><button id="mceu_31-open" role="presentation" type="button" tabindex="-1"><span>Edit</span> <i class="mce-caret"></i></button></div><div id="mceu_32" class="mce-widget mce-btn mce-menubtn mce-flow-layout-item" tabindex="-1" aria-labelledby="mceu_32" role="menuitem" aria-haspopup="true"><button id="mceu_32-open" role="presentation" type="button" tabindex="-1"><span>Insert</span> <i class="mce-caret"></i></button></div><div id="mceu_33" class="mce-widget mce-btn mce-menubtn mce-flow-layout-item" tabindex="-1" aria-labelledby="mceu_33" role="menuitem" aria-haspopup="true"><button id="mceu_33-open" role="presentation" type="button" tabindex="-1"><span>View</span> <i class="mce-caret"></i></button></div><div id="mceu_34" class="mce-widget mce-btn mce-menubtn mce-flow-layout-item" tabindex="-1" aria-labelledby="mceu_34" role="menuitem" aria-haspopup="true"><button id="mceu_34-open" role="presentation" type="button" tabindex="-1"><span>Format</span> <i class="mce-caret"></i></button></div><div id="mceu_35" class="mce-widget mce-btn mce-menubtn mce-last mce-flow-layout-item" tabindex="-1" aria-labelledby="mceu_35" role="menuitem" aria-haspopup="true"><button id="mceu_35-open" role="presentation" type="button" tabindex="-1"><span>Table</span> <i class="mce-caret"></i></button></div></div></div><div id="mceu_36" class="mce-toolbar-grp mce-container mce-panel mce-stack-layout-item" hidefocus="1" tabindex="-1" role="group"><div id="mceu_36-body" class="mce-container-body mce-stack-layout"><div id="mceu_37" class="mce-container mce-toolbar mce-first mce-stack-layout-item" role="toolbar"><div id="mceu_37-body" class="mce-container-body mce-flow-layout"><div id="mceu_38" class="mce-container mce-first mce-last mce-flow-layout-item mce-btn-group" role="group"><div id="mceu_38-body"><div id="mceu_0" class="mce-widget mce-btn mce-first" tabindex="-1" aria-labelledby="mceu_0" role="button" aria-label="Bold"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-bold"></i></button></div><div id="mceu_1" class="mce-widget mce-btn mce-active" tabindex="-1" aria-labelledby="mceu_1" role="button" aria-label="Italic" aria-pressed="true"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-italic"></i></button></div><div id="mceu_2" class="mce-widget mce-btn" tabindex="-1" aria-labelledby="mceu_2" role="button" aria-label="Underline"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-underline"></i></button></div><div id="mceu_3" class="mce-widget mce-btn mce-colorbutton" role="button" tabindex="-1" aria-haspopup="true" aria-label="Text Color, press down to select"><button role="presentation" hidefocus="1" type="button" tabindex="-1"><i class="mce-ico mce-i-forecolor"></i><span id="mceu_3-preview" class="mce-preview"></span></button><button type="button" class="mce-open" hidefocus="1" tabindex="-1"> <i class="mce-caret"></i></button></div><div id="mceu_4" class="mce-widget mce-btn mce-colorbutton" role="button" tabindex="-1" aria-haspopup="true" aria-label="Background Color, press down to select"><button role="presentation" hidefocus="1" type="button" tabindex="-1"><i class="mce-ico mce-i-backcolor"></i><span id="mceu_4-preview" class="mce-preview"></span></button><button type="button" class="mce-open" hidefocus="1" tabindex="-1"> <i class="mce-caret"></i></button></div><div id="mceu_5" class="mce-widget mce-btn" tabindex="-1" aria-labelledby="mceu_5" role="button" aria-label="Clear formatting"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-removeformat"></i></button></div><div id="mceu_6" class="mce-widget mce-btn" tabindex="-1" aria-labelledby="mceu_6" role="button" aria-label="Align left"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-alignleft"></i></button></div><div id="mceu_7" class="mce-widget mce-btn" tabindex="-1" aria-labelledby="mceu_7" role="button" aria-label="Align center"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-aligncenter"></i></button></div><div id="mceu_8" class="mce-widget mce-btn" tabindex="-1" aria-labelledby="mceu_8" role="button" aria-label="Align right"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-alignright"></i></button></div><div id="mceu_9" class="mce-widget mce-btn" tabindex="-1" aria-labelledby="mceu_9" role="button" aria-label="Decrease indent"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-outdent"></i></button></div><div id="mceu_10" class="mce-widget mce-btn" tabindex="-1" aria-labelledby="mceu_10" role="button" aria-label="Increase indent"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-indent"></i></button></div><div id="mceu_11" class="mce-widget mce-btn" tabindex="-1" aria-labelledby="mceu_11" role="button" aria-label="Superscript"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-superscript"></i></button></div><div id="mceu_12" class="mce-widget mce-btn" tabindex="-1" aria-labelledby="mceu_12" role="button" aria-label="Subscript"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-subscript"></i></button></div><div id="mceu_13" class="mce-widget mce-btn" tabindex="-1" aria-labelledby="mceu_13" role="button" aria-label="Bullet list"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-bullist"></i></button></div><div id="mceu_14" class="mce-widget mce-btn mce-last" tabindex="-1" aria-labelledby="mceu_14" role="button" aria-label="Numbered list" aria-pressed="false"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-numlist"></i></button></div></div></div></div></div><div id="mceu_39" class="mce-container mce-toolbar mce-last mce-stack-layout-item" role="toolbar"><div id="mceu_39-body" class="mce-container-body mce-flow-layout"><div id="mceu_40" class="mce-container mce-first mce-last mce-flow-layout-item mce-btn-group" role="group"><div id="mceu_40-body"><div id="mceu_15" class="mce-widget mce-btn mce-menubtn mce-first" tabindex="-1" aria-labelledby="mceu_15" role="button" aria-label="Table" aria-haspopup="true"><button id="mceu_15-open" role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-table"></i><span></span> <i class="mce-caret"></i></button></div><div id="mceu_16" class="mce-widget mce-btn" tabindex="-1" aria-labelledby="mceu_16" role="button" aria-label="Link to URL" aria-pressed="false"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-none" style="background-image: url(&#39;/javascripts/tinymce_plugins/instructure_links/img/button.gif&#39;)"></i></button></div><div id="mceu_17" class="mce-widget mce-btn" tabindex="-1" aria-labelledby="mceu_17" role="button" aria-label="Remove link" aria-pressed="false"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-unlink"></i></button></div><div id="mceu_18" class="mce-widget mce-btn" tabindex="-1" aria-labelledby="mceu_18" role="button" aria-label="Embed Image" aria-pressed="false"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-none" style="background-image: url(&#39;/javascripts/tinymce_plugins/instructure_image/img/button.gif&#39;)"></i></button></div><div id="mceu_19" class="mce-widget mce-btn" tabindex="-1" aria-labelledby="mceu_19" role="button" aria-label="Insert Math Equation" aria-pressed="false"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-none" style="background-image: url(&#39;/javascripts/tinymce_plugins/instructure_equation/img/button.gif&#39;)"></i></button></div><div id="mceu_20" class="mce-widget mce-btn mce-instructure_external_tool_button" tabindex="-1" aria-labelledby="mceu_20" role="button" aria-label="YouTube"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-none" style="background-image: url(&#39;https://www.edu-apps.org/tools/youtube/icon.png&#39;)"></i></button></div><div id="mceu_21" class="mce-widget mce-btn mce-instructure_external_tool_button" tabindex="-1" aria-labelledby="mceu_21" role="button" aria-label="TED Ed"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-none" style="background-image: url(&#39;https://www.edu-apps.org/tools/ted_ed/icon.png&#39;)"></i></button></div><div id="mceu_22" class="mce-widget mce-btn" tabindex="-1" aria-labelledby="mceu_22" role="button" aria-label="More External Tools"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-none" style="background-image: url(&#39;/images/downtick.png&#39;)"></i></button></div><div id="mceu_23" class="mce-widget mce-btn" tabindex="-1" aria-labelledby="mceu_23" aria-label="Record/Upload Media" aria-disabled="true"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-none" style="background-image: url(&#39;/javascripts/tinymce_plugins/instructure_record/img/record.gif&#39;)" alt="This feature is inaccessible for screen readers." title="This feature is inaccessible for screen readers."></i></button></div><div id="mceu_24" class="mce-widget mce-btn" tabindex="-1" aria-labelledby="mceu_24" role="button" aria-label="Left to right"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-ltr"></i></button></div><div id="mceu_25" class="mce-widget mce-btn" tabindex="-1" aria-labelledby="mceu_25" role="button" aria-label="Right to left"><button role="presentation" type="button" tabindex="-1"><i class="mce-ico mce-i-rtl"></i></button></div><div id="mceu_26" class="mce-widget mce-btn mce-menubtn mce-fixed-width mce-listbox" tabindex="-1" aria-labelledby="mceu_26" role="button" aria-label="Font Size, press down to select" aria-haspopup="true"><button id="mceu_26-open" role="presentation" type="button" tabindex="-1"><span>Font Sizes</span> <i class="mce-caret"></i></button></div><div id="mceu_27" class="mce-widget mce-btn mce-menubtn mce-fixed-width mce-listbox mce-last" tabindex="-1" aria-labelledby="mceu_27" role="button" aria-haspopup="true" aria-label="Formatting, press down to select"><button id="mceu_27-open" role="presentation" type="button" tabindex="-1"><span>Paragraph</span> <i class="mce-caret"></i></button></div></div></div></div></div></div></div><div id="mceu_41" class="mce-edit-area mce-container mce-panel mce-stack-layout-item" hidefocus="1" tabindex="-1" role="group" style="border-width: 1px 0px 0px;"><iframe id="submission_body_ifr" frameborder="0" allowtransparency="true" title="Rich Text Area. Press ALT+F8 for help" src="javascript:""" style="width: 100%; height: 250px; display: block;"></iframe></div><div id="mceu_42" class="mce-statusbar mce-container mce-panel mce-last mce-stack-layout-item" hidefocus="1" tabindex="-1" role="group" style="border-width: 1px 0px 0px;"><div id="mceu_42-body" class="mce-container-body mce-flow-layout"><div id="mceu_43" class="mce-path mce-first mce-flow-layout-item"><div role="button" class="mce-path-item" data-index="0" tabindex="-1" id="mceu_43-0" aria-level="0">p</div><div class="mce-divider" aria-hidden="true"> » </div><div role="button" class="mce-path-item mce-last" data-index="1" tabindex="-1" id="mceu_43-1" aria-level="1">i</div></div><div id="mceu_44" class="mce-last mce-flow-layout-item mce-resizehandle"><i class="mce-ico mce-i-resize"></i></div></div></div></div></div><textarea cols="40" id="submission_body" name="submission[body]" rows="20" style="width: 100%; height: 250px; display: none;" aria-hidden="true"></textarea>
+        </td>
+      </tr><tr>
+        <td>
+          <textarea class="submission_comment_textarea" cols="40" id="submission_comment" name="submission[comment]" placeholder="Comments..." rows="20" title="Additional comments"></textarea>
+        </td>
+      </tr>
+      
+      <tr>
+        <td class="button-container">
+          <button type="button" class="cancel_button btn">Cancel</button>
+          <button type="submit" class="btn btn-primary">Submit Assignment</button>
+        </td>
+      </tr>
+    </tbody></table>
+</form>
+
+    <style>
+    #google_docs_tree li.folder {
+      cursor: pointer;
+    }
+    #google_docs_tree li.file {
+      cursor: pointer;
+      -moz-border-radius: 3px;
+      width: 80%;
+      padding-right: 20px;
+    }
+    #google_docs_tree li.file:hover {
+      background-color: #eee;
+    }
+    ul.instTree li span.active {
+      background: none;
+    }
+    #google_docs_tree li.file.leaf.active {
+      background-color: #ddd;
+    }
+    #google_docs_tree li.file .filename {
+      float: left;
+      max-width: 98%;
+    }
+    #google_docs_tree li.file .popout {
+      float: right;
+    }
+    </style>
+
+
+
+  </div>
+</div>
+
+
+
+
+<div id="rubrics" style="margin-bottom: 10px;">
+  <div style="display: none;" id="rubric_parameters">
+    <input type="hidden" name="rubric_association[association_type]" value="Assignment">
+    <input type="hidden" name="rubric_association[association_id]" value="6510355">
+    <input type="hidden" name="rubric_association[purpose]" value="grading">
+  </div>
+  <div id="rubric_long_description_dialog" style="display: none;">
+  <div class="description" style="border-bottom: 1px solid #ccc; padding: 5px 0; font-size: 1.2em; font-weight: bold; margin-bottom: 5px;">
+  </div>
+  <div class="editing">
+    <textarea class="long_description" aria-label="Long Description" name="long_description" style="width: 370px;"></textarea>
+    <div class="button-container">
+      <button type="button" class="btn save_button">Update Description</button>
+      <button type="button" class="btn btn button-secondary cancel_button">Cancel</button>
+    </div>
+  </div>
+  <div class="displaying">
+    <div class="long_description">
+    </div>
+  </div>
+</div>
+<div id="rubric_criterion_comments_dialog" style="display: none;">
+  <div class="criterion_description" style="border-bottom: 1px solid #ccc; padding: 5px 0; font-size: 1.2em; font-weight: bold; margin-bottom: 5px;" tabindex="-1"></div>
+  <div class="editing">
+    <label for="criterion_comments_textarea">
+      Additional Comments:
+    </label>
+    <textarea id="criterion_comments_textarea" class="criterion_comments" name="criterion_comments" style="width: 370px;"></textarea>
+    <div class="button-container">
+      <button type="button" class="btn save_button">Update Comments</button>
+      <button type="button" class="btn btn button-secondary cancel_button">Cancel</button>
+    </div>
+  </div>
+  <div class="displaying">
+    Additional Comments:
+    <div class="criterion_comments" style="margin-top: 10px;">
+    </div>
+  </div>
+</div>
+
+</div>
+<div class="rubric_container rubric  " id="default_rubric" style="display: none;" tabindex="0">
+  <div class="screenreader-only"><h2>Rubric</h2></div>
+  <div class="rubric_title">
+    <div style="float: right; display: none;" class="links displaying">
+      <a href="https://usfca.instructure.com/courses/1479071/rubrics/%7B%7B%20id%20%7D%7D" class=" edit_rubric_link no-print no-hover" style="" title="Edit Rubric" aria-label="Edit Rubric" role="button"><i class="icon-edit standalone-icon"></i></a>
+      <a href="https://usfca.instructure.com/search/rubrics?q=" class="find_rubric_link no-print no-hover" style="" title="Find Another Rubric" aria-label="Find Another Rubric" role="button"><i class="icon-search standalone-icon"></i></a>
+        <a href="https://usfca.instructure.com/courses/1479071/rubric_associations/%7B%7B%20rubric_association_id%20%7D%7D" class="delete_rubric_link no-print no-hover" style="" title="Delete Rubric" aria-label="Delete Rubric" role="button"><i class="icon-trash standalone-icon"></i></a>
+      <div style="display: none;">
+        <div class="use_for_grading">&nbsp;</div>
+        <div class="free_form_criterion_comments">&nbsp;</div>
+        <div class="hide_score_total">&nbsp;</div>
+        <div class="rubric_association_id">&nbsp;</div>
+        <div class="user_id">&nbsp;</div>
+        <div class="assessment_type"></div>
+        <a href="https://usfca.instructure.com/courses/1479071/rubric_associations/%7B%7B%20rubric_association_id%20%7D%7D/assessments/%7B%7B%20assessment_id%20%7D%7D" rel="nofollow" class="edit_assessment_link">&nbsp;</a>
+        <a href="https://usfca.instructure.com/courses/1479071/rubrics/%7B%7B%20rubric_id%20%7D%7D" class="edit_rubric_url">&nbsp;</a>
+          <a href="https://usfca.instructure.com/courses/1479071/rubric_associations/%7B%7B%20association_id%20%7D%7D" class="delete_rubric_url">&nbsp;</a>
+      </div>
+    </div>
+    <div style="float: right; font-size: 0.8em; display: none;" class="links displaying locked">
+      <span style="">Can't change a rubric once you've started using it.</span>
+        <a href="https://usfca.instructure.com/courses/1479071/rubric_associations/%7B%7B%20association_id%20%7D%7D" class="delete_rubric_url" style="display: none;">&nbsp;</a>
+    </div>
+
+    <div class="editing" style="float: right;">
+      <a href="https://usfca.instructure.com/search/rubrics?q=" class="find_rubric_link icon-search" style="" title="Find Existing Rubric">Find a Rubric</a>
+    </div>
+    <div class="editing" style="text-align: left">
+      <label for="rubric-title">Title:</label>
+      <input id="rubric-title" type="text" class="no-margin-bottom" name="title" value="Some Rubric" style="width: 200px;" maxlength="255" aria-label="Title:">
+      <a href="https://usfca.instructure.com/search/rubrics?q=" style="display: none;"><img alt="Find" src="./Paper 11_ Cassandra - A Decentralized Structured Storage System_files/find.png"> Find Rubric</a>
+    </div>
+    <div class="displaying">
+      <span class="title" tabindex="-1">Title</span>
+    </div>
+    <div class="has-assessments-warning" style="display: none;">
+      You've already rated students with this rubric.  Any major changes could affect their assessment results.
+    </div>
+  </div>
+<table class="rubric_table">
+<caption>
+  <div class="screenreader-only">
+    <span class="title">Title</span>
+  </div>
+</caption>
+<thead>
+  <tr>
+    <th>Criteria</th>
+    <th>Ratings</th>
+    <th>Pts</th>
+    <th class="editing">&nbsp;</th>
+  </tr>
+</thead>
+<tbody>
+  
+<tr id="criterion_blank" class="criterion blank  " style="display: none;">
+  <td class="criterion_description hover-container">
+    <div class="container">
+      <img alt="Flagged_question" class="learning_outcome_flag" src="./Paper 11_ Cassandra - A Decentralized Structured Storage System_files/flagged_question.png" title="This criterion is linked to a Learning Outcome">
+      <span class="description criterion_description_value">Description of criterion</span>
+      <span class="learning_outcome_id" style="display: none;"></span>
+      <span class="criterion_id" style="display: none;"></span>
+      <div class="long_description_holder editing empty">
+        <a href="https://usfca.instructure.com/courses/1479071/assignments/6510355#" class="long_description_link">view longer description</a>
+        <textarea class="long_description" aria-label="Long Description" style="display: none;"></textarea>
+      </div>
+      <div class="threshold">
+        threshold:
+        <span class="mastery_points">5</span> pts
+      </div>
+      <div class="links editing">
+        <a href="https://usfca.instructure.com/courses/1479071/assignments/6510355#" class="edit_criterion_link"><i class="icon-edit standalone-icon"></i><span class="screenreader-only">Edit criterion description</span></a>
+      </div>
+    </div>
+  </td>
+  <td style="padding: 0;">
+      <table class="ratings" style=""><tbody><tr>
+          <td id="rating_blank" class="rating edge_rating" tabindex="0">
+          <div class="container">
+            <div class="description rating_description_value">Full Marks</div>
+            <span class="nobr"><span class="points">5</span> pts</span>
+            <span class="rating_id" style="display: none;">blank</span>
+            <div class="links">
+              <a href="https://usfca.instructure.com/courses/1479071/assignments/6510355#" class="edit_rating_link"><i class="icon-edit standalone-icon"></i><span class="screenreader-only">Edit rating</span></a>
+              <a href="https://usfca.instructure.com/courses/1479071/assignments/6510355#" class="delete_rating_link"><i class="icon-end standalone-icon"></i><span class="screenreader-only">Delete rating</span></a>
+
+              <!-- Hidden if last -->
+              <a href="https://usfca.instructure.com/courses/1479071/assignments/6510355#" class="add_rating_link_after"><i class="icon-add standalone-icon"></i><span class="screenreader-only">Add new rating category after current rating</span></a>
+            </div>
+          </div>
+          </td>
+          <td id="rating_blank_2" class="rating edge_rating" tabindex="0">
+          <div class="container">
+            <div class="description rating_description_value">No Marks</div>
+            <span class="nobr"><span class="points">0</span> pts</span>
+            <span class="rating_id" style="display: none;">blank_2</span>
+            <div class="links">
+              <a href="https://usfca.instructure.com/courses/1479071/assignments/6510355#" class="edit_rating_link"><i class="icon-edit standalone-icon"></i><span class="screenreader-only">Edit rating</span></a>
+              <a href="https://usfca.instructure.com/courses/1479071/assignments/6510355#" class="delete_rating_link"><i class="icon-end standalone-icon"></i><span class="screenreader-only">Delete rating</span></a>
+
+              <!-- Hidden if last -->
+              <a href="https://usfca.instructure.com/courses/1479071/assignments/6510355#" class="add_rating_link_after"><i class="icon-add standalone-icon"></i><span class="screenreader-only">Add new rating category after current rating</span></a>
+            </div>
+          </div>
+          </td>
+      </tr></tbody></table>
+      <div style="display: none; font-style: italic; font-size: 0.8em; margin: 5px;" class="custom_ratings">
+        This area will be used by the assessor to leave
+        comments related to this criterion.
+      </div>
+  </td>
+  <td class="nobr points_form">
+    <div class="editing" style="white-space: normal">
+      <span style="white-space: nowrap; font-size: 0.8em">
+          <input type="text" aria-label="Points" value="5" class="criterion_points span1 no-margin-bottom"> pts
+      </span><br>
+    </div>
+    <div class="displaying">
+      <span style="white-space: nowrap;">
+        <span class="criterion_rating_points_holder" style="display: none;">
+          <span class="criterion_rating_points">&nbsp;</span> /
+        </span>
+        <span class="display_criterion_points">5</span> pts<br>
+      </span>
+    </div>
+    <div class="ignoring">
+      <span> -- </span>
+    </div>
+    <div class="criterion_comments">
+        <a href="https://usfca.instructure.com/courses/1479071/assignments/6510355#" class="no-hover criterion_comments_link" title="Additional Comments">
+          <img alt="Additional Comments" src="./Paper 11_ Cassandra - A Decentralized Structured Storage System_files/rubric_comment.png">
+        </a>
+        <div class="custom_rating" style="display: none;"></div>
+    </div>
+  </td>
+  <td class="editing">
+    <a href="https://usfca.instructure.com/courses/1479071/assignments/6510355#" class="delete_criterion_link" title="Delete Criterion Row" role="button" aria-label="Delete Criterion Row"><i class="icon-end"></i></a>
+  </td>
+</tr>
+
+
+  <tr id="criterion_1" class="criterion" style="display: table-row;">
+  <td class="criterion_description hover-container">
+    <div class="container">
+      <img alt="Flagged_question" class="learning_outcome_flag" src="./Paper 11_ Cassandra - A Decentralized Structured Storage System_files/flagged_question.png" title="This criterion is linked to a Learning Outcome">
+      <span class="description criterion_description_value">Description of criterion</span>
+      <span class="learning_outcome_id" style="display: none;"></span>
+      <span class="criterion_id" style="display: none;"></span>
+      <div class="long_description_holder editing empty">
+        <a href="https://usfca.instructure.com/courses/1479071/assignments/6510355#" class="long_description_link">view longer description</a>
+        <textarea class="long_description" aria-label="Long Description" style="display: none;"></textarea>
+      </div>
+      <div class="threshold">
+        threshold:
+        <span class="mastery_points">5</span> pts
+      </div>
+      <div class="links editing">
+        <a href="https://usfca.instructure.com/courses/1479071/assignments/6510355#" class="edit_criterion_link"><i class="icon-edit standalone-icon"></i><span class="screenreader-only">Edit criterion description</span></a>
+      </div>
+    </div>
+  </td>
+  <td style="padding: 0;">
+      <table class="ratings" style=""><tbody><tr>
+          <td id="rating_blank" class="rating edge_rating" tabindex="0">
+          <div class="container">
+            <div class="description rating_description_value">Full Marks</div>
+            <span class="nobr"><span class="points">5</span> pts</span>
+            <span class="rating_id" style="display: none;">blank</span>
+            <div class="links">
+              <a href="https://usfca.instructure.com/courses/1479071/assignments/6510355#" class="edit_rating_link"><i class="icon-edit standalone-icon"></i><span class="screenreader-only">Edit rating</span></a>
+              <a href="https://usfca.instructure.com/courses/1479071/assignments/6510355#" class="delete_rating_link"><i class="icon-end standalone-icon"></i><span class="screenreader-only">Delete rating</span></a>
+
+              <!-- Hidden if last -->
+              <a href="https://usfca.instructure.com/courses/1479071/assignments/6510355#" class="add_rating_link_after"><i class="icon-add standalone-icon"></i><span class="screenreader-only">Add new rating category after current rating</span></a>
+            </div>
+          </div>
+          </td>
+          <td id="rating_blank_2" class="rating edge_rating" tabindex="0">
+          <div class="container">
+            <div class="description rating_description_value">No Marks</div>
+            <span class="nobr"><span class="points">0</span> pts</span>
+            <span class="rating_id" style="display: none;">blank_2</span>
+            <div class="links">
+              <a href="https://usfca.instructure.com/courses/1479071/assignments/6510355#" class="edit_rating_link"><i class="icon-edit standalone-icon"></i><span class="screenreader-only">Edit rating</span></a>
+              <a href="https://usfca.instructure.com/courses/1479071/assignments/6510355#" class="delete_rating_link"><i class="icon-end standalone-icon"></i><span class="screenreader-only">Delete rating</span></a>
+
+              <!-- Hidden if last -->
+              <a href="https://usfca.instructure.com/courses/1479071/assignments/6510355#" class="add_rating_link_after"><i class="icon-add standalone-icon"></i><span class="screenreader-only">Add new rating category after current rating</span></a>
+            </div>
+          </div>
+          </td>
+      </tr></tbody></table>
+      <div style="display: none; font-style: italic; font-size: 0.8em; margin: 5px;" class="custom_ratings">
+        This area will be used by the assessor to leave
+        comments related to this criterion.
+      </div>
+  </td>
+  <td class="nobr points_form">
+    <div class="editing" style="white-space: normal">
+      <span style="white-space: nowrap; font-size: 0.8em">
+          <input type="text" aria-label="Points" value="5" class="criterion_points span1 no-margin-bottom"> pts
+      </span><br>
+    </div>
+    <div class="displaying">
+      <span style="white-space: nowrap;">
+        <span class="criterion_rating_points_holder" style="display: none;">
+          <span class="criterion_rating_points">&nbsp;</span> /
+        </span>
+        <span class="display_criterion_points">5</span> pts<br>
+      </span>
+    </div>
+    <div class="ignoring">
+      <span> -- </span>
+    </div>
+    <div class="criterion_comments">
+        <a href="https://usfca.instructure.com/courses/1479071/assignments/6510355#" class="no-hover criterion_comments_link" title="Additional Comments">
+          <img alt="Additional Comments" src="./Paper 11_ Cassandra - A Decentralized Structured Storage System_files/rubric_comment.png">
+        </a>
+        <div class="custom_rating" style="display: none;"></div>
+    </div>
+  </td>
+  <td class="editing">
+    <a href="https://usfca.instructure.com/courses/1479071/assignments/6510355#" class="delete_criterion_link" title="Delete Criterion Row" role="button" aria-label="Delete Criterion Row"><i class="icon-end"></i></a>
+  </td>
+</tr><tr class="summary" style="">
+    <td colspan="4">
+      <div style="float: right;" class="total_points_holder">
+        <span style="padding-right: 10px;">Total Points:
+            <span class="rubric_total">5</span> <span class="assessing">out of 5</span>
+        </span>
+      </div>
+      <div style="float: left;" class="editing">
+      <a href="https://usfca.instructure.com/courses/1479071/assignments/6510355#" class="icon-add add_criterion_link">Add Criterion</a>
+      &nbsp;&nbsp;<a href="https://usfca.instructure.com/courses/1479071/assignments/6510355#" class="icon-search find_outcome_link outcome">Find Outcome</a>
+      </div>
+      <div class="clear"></div>
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+<table style="display: none;">
+  <tbody><tr id="edit_rubric">
+    <td colspan="4">
+      <form id="edit_rubric_form" class="edit-rubric-form no-margin-bottom">
+        <div class="rubric_custom_ratings" style="">
+          <input type="checkbox" id="rubric_custom_rating" class="rubric_custom_rating">
+          <label for="rubric_custom_rating">I'll write free-form comments when assessing students</label>
+        </div>
+          <div class="rubric_grading" style="">
+            <input type="checkbox" id="grading_rubric" class="grading_rubric_checkbox">
+            <label for="grading_rubric">Use this rubric for assignment grading</label>
+          </div>
+        <div class="totalling_rubric" style="">
+          <input type="checkbox" id="totalling_rubric" class="totalling_rubric_checkbox">
+          <label for="totalling_rubric">Hide score total for assessment results</label>
+        </div>
+        <div class="button-container">
+          <button type="button" class="btn btn-small cancel_button">Cancel</button>
+          <button type="submit" class="btn btn-small save_button btn-primary">Create Rubric</button>
+        </div>
+      </form>
+    </td>
+  </tr>
+</tbody></table>
+
+
+
+            </div>
+          </div>
+        </div>
+        <div id="right-side-wrapper">
+          <aside id="right-side" role="complementary">
+            <div id="sidebar_content">
+
+    <ul class="page-action-list">
+      <li>
+        <a href="https://usfca.instructure.com/courses/1479071/assignments/6510355#" class="submit_assignment_link button-sidebar-wide " style="display: none;">
+          <i class="icon-add"></i> Submit Assignment
+        </a>
+      </li>
+    </ul>
+
+</div>
+
+          </aside>
+        </div>
+      </div>
+      <footer role="contentinfo" id="footer">
+        <a href="http://www.instructure.com/" class="footer-logo">
+          <span class="screenreader-only">
+            By Instructure
+          </span>
+        </a>
+        <span id="footer-links">
+          <a target="_blank" href="http://eepurl.com/1LSkT">User Research</a>
+          <a href="http://help.instructure.com/" class="support_url help_dialog_trigger" data-track-category="help system" data-track-label="help button">Help</a>
+          <a href="https://usfca.instructure.com/privacy_policy">Privacy policy</a>
+<a href="https://usfca.instructure.com/terms_of_use">Terms of service</a>
+<a href="http://facebook.com/instructure">Facebook</a>
+<a href="http://twitter.com/instructure">Twitter</a>
+
+        </span>
+      </footer>
+    </div>
+  </div>
+
+
+
+    <div style="display:none;"><!-- Everything inside of this should always stay hidden -->
+        <a href="https://usfca.instructure.com/page_views/2e8f0fd0-d195-0132-f5c5-12d3fdec6768" id="page_view_update_path">&nbsp;</a>
+        <div id="page_view_id">2e8f0fd0-d195-0132-f5c5-12d3fdec6768</div>
+    </div>
+    <div id="cant_record_dialog" style="display: none;">
+  <div>
+    In order to create video or audio recordings your computer needs to be 
+    webcam-enabled.  If you don't have a webcam on your computer, you can still
+    record audio-only messages by first installing the Google Video Chat
+    plugin.
+  </div>
+  <div style="text-align: center; font-size: 1.5em; margin: 10px;">
+    <a href="http://www.google.com/chat/video" target="_blank" class="btn">Install the Video Plugin</a>
+  </div>
+  <div class="links" style="text-align: right; font-size: 0.8em; display: none;">
+    <a href="https://usfca.instructure.com/courses/1479071/assignments/6510355#" class="cant_record_link">Don't have a webcam?</a>
+  </div>
+</div>
+  <div id="aria_alerts" class="hide-text affix" role="alert" aria-live="assertive"></div>
+  <script>
+  INST = {"environment":"production","allowMediaComments":true,"kalturaSettings":{"domain":"nv.instructuremedia.com","resource_domain":"nv.instructuremedia.com","rtmp_domain":"fms-prod.instructuremedia.com","partner_id":"9","subpartner_id":"0","player_ui_conf":"0","kcw_ui_conf":"0","upload_ui_conf":"0","max_file_size_bytes":534773760,"do_analytics":false,"hide_rte_button":false,"js_uploader":true},"googleAnalyticsAccount":"UA-9138420-1","disableScribdPreviews":true,"enableHtml5FirstVideos":true,"logPageViews":true,"maxVisibleEditorButtons":3,"editorButtons":[{"name":"YouTube","id":36771,"url":"https:\/\/www.edu-apps.org\/tool_redirect?id=youtube","icon_url":"https:\/\/www.edu-apps.org\/tools\/youtube\/icon.png","width":690,"height":530},{"name":"TED Ed","id":40784,"url":"https:\/\/www.edu-apps.org\/tool_redirect?id=ted_ed","icon_url":"https:\/\/www.edu-apps.org\/tools\/ted_ed\/icon.png","width":690,"height":530},{"name":"Khan Academy","id":60711,"url":"https:\/\/www.edu-apps.org\/tool_redirect?id=khan_academy","icon_url":"https:\/\/www.edu-apps.org\/tools\/khan_academy\/icon.png","width":690,"height":530},{"name":"educreations","id":109051,"url":"https:\/\/www.edu-apps.org\/tool_redirect?id=educreations","icon_url":"https:\/\/www.edu-apps.org\/tools\/educreations\/icon.png","width":690,"height":530},{"name":"Twitter","id":109053,"url":"https:\/\/www.edu-apps.org\/twitter_lti\/","icon_url":"https:\/\/www.edu-apps.org\/assets\/inst_lti_twitter\/icon.png","width":475,"height":490}]};
+  ENV = {"current_user_id":"4130113","current_user":{"id":"4130113","display_name":"Yi Xu","avatar_image_url":"https:\/\/secure.gravatar.com\/avatar\/de9d70f51289c01f39fae217c69f667c?s=50\u0026d=https%3A%2F%2Fcanvas.instructure.com%2Fimages%2Fmessages%2Favatar-50.png","html_url":"https:\/\/usfca.instructure.com\/about\/4130113"},"current_user_roles":["user","student"],"files_domain":"cluster37-files.instructure.com","DOMAIN_ROOT_ACCOUNT_ID":10180000000090279,"use_new_styles":false,"k12":false,"use_high_contrast":false,"SETTINGS":{"open_registration":false},"badge_counts":{"submissions":0},"context_asset_string":"course_1479071","ping_url":"https:\/\/usfca.instructure.com\/api\/v1\/courses\/1479071\/ping","TIMEZONE":"America\/Los_Angeles","CONTEXT_TIMEZONE":"America\/Los_Angeles","LOCALE":"en-US","TOURS":[],"ROOT_OUTCOME_GROUP":{"id":"743012","title":"Operating Systems (Spring 2015)","vendor_guid":null,"url":"\/api\/v1\/courses\/1479071\/outcome_groups\/743012","subgroups_url":"\/api\/v1\/courses\/1479071\/outcome_groups\/743012\/subgroups","outcomes_url":"\/api\/v1\/courses\/1479071\/outcome_groups\/743012\/outcomes","can_edit":false,"import_url":"\/api\/v1\/courses\/1479071\/outcome_groups\/743012\/import","context_id":"1479071","context_type":"Course","description":null},"COURSE_ID":1479071,"ASSIGNMENT_ID":6510355,"EXTERNAL_TOOLS":[],"SUBMIT_ASSIGNMENT":{"ALLOWED_EXTENSIONS":[],"ID":6510355},"notices":[]};
+
+  // TODO: move this out when we have a single require call
+  require = {
+    translate: true,
+    baseUrl: '/optimized',
+    paths: {
+    "common":"compiled\/bundles\/common",
+    "jqueryui":"vendor\/jqueryui",
+    "uploadify":"..\/flash\/uploadify\/jquery.uploadify-3.2.min",
+    "compiled\/tinymce":"compiled\/tinymce.js?v2",
+    "instructure_misc_plugin":"plugins\/instructure_misc_plugin",
+    "multiple_root_accounts":"plugins\/multiple_root_accounts",
+    "migration_tool":"plugins\/migration_tool",
+    "demo_site":"plugins\/demo_site",
+    "canvasnet_registration":"plugins\/canvasnet_registration",
+    "analytics":"plugins\/analytics",
+    "compiled\/registration\/main_without_extensions":"compiled\/registration\/main",
+    "compiled\/registration\/main":"compiled\/registration\/main_with_extensions",
+    "compiled\/registration\/signupDialog_without_extensions":"compiled\/registration\/signupDialog",
+    "compiled\/registration\/signupDialog":"compiled\/registration\/signupDialog_with_extensions",
+    "compiled\/bundles\/modules\/account_quota_settings_without_extensions":"compiled\/bundles\/modules\/account_quota_settings",
+    "compiled\/bundles\/modules\/account_quota_settings":"compiled\/bundles\/modules\/account_quota_settings_with_extensions",
+    "canvas_quizzes":"client_apps\/canvas_quizzes",
+    "app\/config\/environments\/production":"empty:"},
+    packages : [{"name":"ic-ajax","location":"bower\/ic-ajax\/dist\/amd"},{"name":"ic-styled","location":"bower\/ic-styled"},{"name":"ic-menu","location":"bower\/ic-menu"},{"name":"ic-tabs","location":"bower\/ic-tabs\/dist\/amd"},{"name":"ic-droppable","location":"bower\/ic-droppable\/dist\/amd"},{"name":"ic-sortable","location":"bower\/ic-sortable\/dist\/amd"},{"name":"ic-modal","location":"bower\/ic-modal\/dist\/amd"},{"name":"ic-lazy-list","location":"bower\/ic-lazy-list"},{"name":"ember-qunit","location":"bower\/ember-qunit\/dist\/amd"}],
+    shim: {
+    'bower/react-router/dist/react-router': {
+      deps: ['react'],
+      exports: 'ReactRouter'
+    },
+    'bower/react-modal/dist/react-modal': {
+      deps: ['react']
+    },
+    'bower/react-tokeninput/dist/react-tokeninput': {
+      deps: ['react'],
+    },
+    'bower/ember/ember': {
+      deps: ['jquery', 'handlebars'],
+      exports: 'Ember'
+    },
+    'bower/ember-data/ember-data': {
+      deps: ['ember'],
+      exports: 'DS'
+    },
+    'bower/handlebars/handlebars.runtime': {
+      exports: 'Handlebars'
+    },
+    'vendor/FileAPI/FileAPI.min': {
+      deps: ['jquery', 'vendor/FileAPI/config'],
+      exports: 'FileAPI'
+    },
+    'uploadify': {
+      deps: ['jquery'],
+      exports: '$'
+    },
+    'vendor/bootstrap-select/bootstrap-select' : {
+      deps: ['jquery'],
+      exports: '$'
+    },
+    'vendor/jquery.jcrop': {
+      deps: ['jquery'],
+      exports: '$'
+    },
+    'vendor/jquery.smartbanner': {
+      deps: ['jquery'],
+      exports: '$'
+    },
+    'handlebars': {
+      deps: ['bower/handlebars/handlebars.runtime.amd'],
+      exports: 'Handlebars'
+    },
+    'vendor/i18n': {
+      exports: 'I18n'
+    },
+    'vendor/react-infinite-scroll.min' : {
+      deps: ['react'],
+      exports: 'InfiniteScroll'
+    },
+    'bower/tinymce/tinymce' : {
+      exports: 'tinymce'
+    },
+    'bower/tinymce/themes/modern/theme' : {
+      deps: ['bower/tinymce/tinymce'],
+      exports: 'tinymce'
+    }
+  }
+,
+    map: {"canvas_quizzes":{"lodash":"underscore","d3":"vendor\/d3.v3","backbone":"vendor\/backbone","jquery\/instructure_date_and_time":"jquery.instructure_date_and_time","react":"old_unsupported_dont_use_react","react-router":"old_unsupported_dont_use_react-router"}},
+    waitSeconds: 60
+  };
+</script>
+
+<script src="./Paper 11_ Cassandra - A Decentralized Structured Storage System_files/require.js" type="text/javascript"></script>
+<script src="./Paper 11_ Cassandra - A Decentralized Structured Storage System_files/common.js" type="text/javascript"></script>
+<script src="./Paper 11_ Cassandra - A Decentralized Structured Storage System_files/assignment_show.js" type="text/javascript"></script>
+<script src="./Paper 11_ Cassandra - A Decentralized Structured Storage System_files/submit_assignment.js" type="text/javascript"></script>
+<script src="./Paper 11_ Cassandra - A Decentralized Structured Storage System_files/edit_rubric.js" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+          (function() {
+            var inject = function(src) {
+              var s = document.createElement('script');
+              s.src = src;
+              s.type = 'text/javascript';
+              document.body.appendChild(s);
+            };
+            var srcs = ["https:\/\/canvas.usfca.edu\/overrides.js"];
+            require(['jquery'], function() {
+              for (var i = 0, l = srcs.length; i < l; i++) {
+                inject(srcs[i]);
+              }
+            });
+          })();
+
+//]]>
+</script>
+
+
+
+<script>
+// Determines if the scripts are loaded.
+// When we get everything out of the views, and have a single top-level
+// `require`, this becomes meaningless and will be abandoned.
+(function() {
+  var attempts = 0;
+  var timeout = 10;
+  var check = function() {
+    attempts++;
+    var done = !window.requirejs.s.contexts._.defQueue.length
+    var giveup = attempts === 100; // 1 second
+    if (done || giveup) {
+      var className = document.documentElement.className;
+      document.documentElement.className = className.replace(/scripts-not-loaded/, '');
+      return;
+    }
+    setTimeout(check, timeout);
+  };
+
+  check();
+}).call(this);
+</script>
+
+</div> <!-- #application -->
+
+
+<div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-resizable" tabindex="-1" style="display: none; outline: 0px; z-index: 1000; position: absolute;"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span id="ui-id-1" class="ui-dialog-title" role="heading">Keyboard Shortcuts</span><a href="https://usfca.instructure.com/courses/1479071/assignments/6510355#" class="ui-dialog-titlebar-close ui-corner-all" role="button" tabindex="0"><span class="ui-icon ui-icon-closethick">close</span></a></div><ul class="tinymce-keyboard-shortcuts ui-dialog-content ui-widget-content" id="ui-id-2" style="display: block;">
+  
+    <li>
+      <code>ALT+F9</code>
+      <span>Open the editor's menubar</span>
+    </li>
+  
+    <li>
+      <code>ALT+F10</code>
+      <span>Open the editor's toolbar</span>
+    </li>
+  
+    <li>
+      <code>ESC</code>
+      <span>Close menu or dialog, also gets you back to editor area</span>
+    </li>
+  
+    <li>
+      <code>TAB/Arrows</code>
+      <span>Navigate left/right through menu/toolbar</span>
+    </li>
+  
+    <li>
+      <code>ALT+F8</code>
+      <span>Open this help dialog</span>
+    </li>
+  
+</ul><div class="ui-resizable-handle ui-resizable-n" style="z-index: 1000;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 1000;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 1000;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 1000;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se ui-icon-grip-diagonal-se" style="z-index: 1000;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 1000;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 1000;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 1000;"></div></div><script src="./Paper 11_ Cassandra - A Decentralized Structured Storage System_files/overrides.js" type="text/javascript"></script><div id="mceu_45" class="mce-widget mce-tooltip mce-tooltip-n" role="presentation" style="left: 640.90625px; top: 645.578125px; z-index: 131070; display: none;"><div class="mce-tooltip-arrow"></div><div class="mce-tooltip-inner">Font Sizes</div></div></body></html>

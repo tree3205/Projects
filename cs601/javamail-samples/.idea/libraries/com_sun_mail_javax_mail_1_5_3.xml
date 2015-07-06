@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="com.sun.mail:javax.mail:1.5.3" type="repository">
+    <properties maven-id="com.sun.mail:javax.mail:1.5.3" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/com/sun/mail/javax.mail/1.5.3/javax.mail-1.5.3.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/javax/activation/activation/1.1/activation-1.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ideaLibSources/javax.mail-1.5.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

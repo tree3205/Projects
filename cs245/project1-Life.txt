@@ -1,0 +1,94 @@
+import galles.ElemIterator;
+import galles.MatrixElem;
+import galles.RowIterator;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.PrintWriter;
+
+
+
+
+public class Life {
+			
+		public String input;
+		public String times;
+		public String output;
+		
+		
+		public Life(String[] args) {
+			input = args[0];
+			output = args[1];
+			times = args[2];
+		}
+
+
+		public MySparseArray initial() {
+			MySparseArray initial = new MySparseArray(0);
+			
+			try {
+				BufferedReader in = new BufferedReader(new FileReader(input));
+				String line;
+				while (( line = in.readLine())!= null) {
+					String[] location = line.split(",");
+					int row = Integer.parseInt(location[0]);
+					int col = Integer.parseInt(location[1]);
+			
+					initial.setValue(row, col, 1);
+				}
+				in.close();
+			}
+			catch (Exception e){
+				System.err.println("Error: " + e.getMessage());
+			}
+		
+			return initial;
+		}
+		
+		public void numOfNeighbors(MySparseArray current, int times) {
+			
+			
+			
+		}
+		
+		
+		public MySparseArray currentGeneration() {
+			
+			
+			return null;
+		}
+		
+		public MySparseArray nextGeneration() {
+			
+			return null;
+		}
+		
+		public void outPut(MySparseArray nextGeneration, String output) {
+			RowIterator r = nextGeneration.iterateRows();
+
+			while (r.hasNext()) {
+			   ElemIterator elmItr = r.next();
+			   while (elmItr.hasNext()) {
+			      MatrixElem me = elmItr.next();
+			      try {
+			    	  PrintWriter out = new PrintWriter(output);
+			    	 
+			      }
+			      catch (Exception e){
+						System.err.println("Error: " + e.getMessage());
+					}
+			      
+			      System.out.print(me.rowIndex() + "," + me.columnIndex());
+			   }
+			}
+		}
+	
+	public static void main(String[] args) {
+		Life l = new Life(args);
+		l.initial();
+		
+	}
+
+	
+	
+	
+}

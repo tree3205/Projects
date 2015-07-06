@@ -1,0 +1,54 @@
+/*@import url("https://instructure-branding.s3.amazonaws.com/fft/overrides.css?v1"); */
+
+a:link,a:visited { color: rgb(0, 84, 60) }
+.menu-item-drop-column-list li a, .customListGhost li a { color: rgb(0, 84, 60) }
+
+#header {
+  /*you can use .pngs with alpha transparency since you dont have to worry about IE6*/
+  background: #ffffff url("topbar.gif") no-repeat bottom center;
+  /*padding-top: 30px;*/
+}
+
+#header-logo, #header.no-user #header-logo {
+    background: url("usf-logo-slim.png?v1") repeat-x scroll 0% 0% transparent;
+    width: 179px;
+    height: 39px;
+    left: 10px;
+    bottom: 14px;
+}
+
+#header-logo-secondary {
+  background: url("header_canvas_logo.png?v1") no-repeat scroll 0 0 transparent;
+  bottom: 15px;
+  height: 26px;
+  position: absolute;
+  right: 26px;
+  width: 135px;
+  display: block;
+}
+
+#menu { margin-left: 210px; }
+
+.menu-item .menu-item-title, .menu-item .menu-item-no-drop { /*rgb(0, 84, 60)*/ color: #888; -moz-text-shadow: none; -webkit-text-shadow: none; -ms-text-shadow: none; text-shadow: none; }
+.menu-item.hover .menu-item-title, .menu-item-no-drop.hover { color: #555555; }
+
+/* current user nav box */
+#identity { background: rgb(0, 84, 60); color: #fff}
+#identity a, #identity .user_name a { color: #fff; }
+
+/*right-side task boxes*/
+
+/*#right-side h2 { background: rgb(253, 187, 48)}
+aside#right-side { border-color: rgb(253, 187, 48); border-style: solid; border: 0px 0px 1px 1px; }
+*/
+/*
+body.modal #modal-box, body.modal #modal-box-arbitrary-size {
+background: url("usf-logo.png") no-repeat top center;
+width: 550px; height: 75px; 
+}
+#login_form { margin-top: 100px }
+*/
+
+/*.btn.button-sidebar-wide.reset_course_content_button { display: none !important; }
+.btn.button-sidebar-wide.delete_course_link { display: none !important; }
+*/

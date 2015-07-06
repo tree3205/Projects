@@ -1,0 +1,55 @@
+10
+
+dir
+225
+https://cs.usfca.edu/svn/yxu66/cs245/project1/.metadata/.plugins
+https://cs.usfca.edu/svn/yxu66
+
+
+
+2013-02-21T04:41:29.311787Z
+222
+yxu66
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+5f1ad8a7-e956-4d9f-acc2-ac7732faee9e
+
+org.eclipse.core.resources
+dir
+
+org.eclipse.core.runtime
+dir
+
+org.eclipse.e4.workbench
+dir
+
+org.eclipse.jdt.core
+dir
+
+org.eclipse.jdt.ui
+dir
+
+org.eclipse.mylyn.context.core
+dir
+
+org.eclipse.mylyn.tasks.ui
+dir
+
+org.eclipse.ui.intro
+dir
+
+org.eclipse.ui.workbench
+dir
+

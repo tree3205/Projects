@@ -1,0 +1,139 @@
+public class LinkedList 
+{
+	private Link head;
+	private Link tail;
+	private int length;
+	
+	public LinkedList()
+	{
+		head = tail = new Link();
+		length = 0;
+	}
+	
+	public void printList() 
+    {
+	    Link currentLink = head;
+	    System.out.print("List: ");
+	    while(currentLink != null) 
+	    {
+		    currentLink.printLink();
+		    //currentLink = currentLink.next();
+	    }
+	    System.out.println("");
+    }
+	
+	public void clear() 
+	{
+		head.setNext(null);
+		tail = head;
+		length = 0;
+	}
+
+	public int size() 
+	{
+		return length;
+	}
+
+	public void add(Object elem) 
+	{
+		tail.setNext(new Link(elem, null));
+		tail = tail.next();
+		length++;
+	}
+
+	public void add(int index, Object elem) 
+	{
+		//Assert.notFalse(index >= 0 && index <= length,"Index not in list");
+		Link tmp = head;
+		for (int i = 0; i < index; i++)
+		{
+			tmp = tmp.next;
+		}
+		tmp.next = new Link(elem, tmp.next);
+		length++;
+	}
+
+	public void remove(int index)
+	{
+		//Assert.notFalse(index >= 0 && index < length);
+		Link tmp = head;
+		for (int  i = 0; i < index; i++)
+		{
+			tmp = tmp.next;
+		}
+		tmp.next = tmp.next.next;
+		length--;
+	}
+
+	public void remove(Object elem)
+	{
+		Link tmp = head;
+		while (tmp.next != null && !tmp.next.element.equals(elem))
+		{
+			tmp = tmp.next;
+		}
+		if (tmp.next != null)
+		{
+			tmp.next = tmp.next.next;
+			length--;
+		}
+	}
+
+	public Object get(int index)
+	{
+		//Assert.notFalse(index >= 0 && index < length,"Index not in list");
+		Link tmp = head.next;
+		for (int i = 0; i < length; i++)
+		{
+			tmp = tmp.next;
+		}
+		return tmp.element;
+	}
+	
+	private class Link 
+	{
+		
+		private Object element;
+		private Link next;
+		
+		Link(Object elem, Link nextelem) 
+		{
+			element = elem;
+			next = nextelem;
+		}
+		
+		Link(Link nextelem) 
+		{
+			next = nextelem;
+		}
+
+		Link() { }
+		
+		Link next() 
+		{
+			return next; 
+		}
+
+		Object element() 
+		{
+			return element;
+		}
+
+		void setNext(Link nextelem) 
+		{
+			next = nextelem;
+		}
+
+		void setElement(Object elem) 
+		{
+			element = elem;
+		}
+		
+	    public void printLink() 
+	    {
+		    System.out.print("{" + element + "} ");
+	    }
+	}	
+	
+}
+

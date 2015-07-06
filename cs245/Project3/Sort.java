@@ -1,0 +1,556 @@
+//https://cs.usfca.edu/svn/yxu66/cs245
+
+public class Sort implements SortInterface{
+	
+	public Sort() {}
+	
+	public void print(Comparable[] array) {
+		for (int i = 0; i < array.length; i++) {
+			System.out.print(array[i] + " ");
+		}
+		System.out.println();
+	}
+	
+	public void print(int[] array) {
+		for (int i = 0; i < array.length; i++) {
+			System.out.print(array[i] + " ");
+		}
+		System.out.println();
+	}
+	
+	public void print(LLNode list) {
+		while (list != null) {
+			System.out.print(list.elem() + " ");
+			list = list.next();
+		}
+		System.out.println();
+	}
+
+	@Override
+	public void insertionSort(Comparable[] array, int lowindex, int highindex, boolean reversed) {
+		int i, j;
+		Comparable tmp;
+		
+		for (i = lowindex + 1; i <= highindex; i++) {
+			tmp = array[i];
+			if (reversed) {
+				for (j = i - 1; j >= lowindex && array[j].compareTo(tmp) < 0; j--)
+					array[j + 1] = array[j];
+			} else {
+				for (j = i - 1; j >= lowindex && array[j].compareTo(tmp) > 0; j--)
+					array[j + 1] = array[j];
+			}
+			array[j + 1] = tmp;
+		}
+	}
+
+	@Override
+	public void selectionSort(Comparable[] array, int lowindex, int highindex, boolean reversed) {
+		int i, j;
+		int loc;
+		Comparable tmp;
+		
+		for (i = lowindex; i <= highindex; i++) {
+			loc = i;
+			for (j = i + 1; j <= highindex; j++) {
+				if (reversed) {
+					if (array[loc].compareTo(array[j]) < 0)
+						loc = j;
+				} else {
+					if (array[loc].compareTo(array[j]) > 0)
+						loc = j;
+				}
+			}
+			tmp = array[i];
+			array[i] = array[loc];
+			array[loc] = tmp;
+		}
+	}
+
+	@Override
+	public void shellSort(Comparable[] array, int lowindex, int highindex, boolean reversed) {
+		int increment, offset;
+		
+		for (increment = Integer.highestOneBit(highindex - lowindex + 1) - 1; increment > 0; increment /= 2)
+			for (offset = 0; offset < increment; offset++)
+				insertionSort(array, lowindex, highindex, reversed, offset, increment);
+	}
+	
+	private static void insertionSort(Comparable[] array, int lowindex, int highindex, boolean reversed, int offset, int increment) {
+		int i, j;
+		Comparable tmp;
+		
+		for (i = lowindex + offset + increment; i <= highindex; i += increment) {
+			tmp = array[i];
+			if (reversed) {
+				for (j = i - increment; j >= lowindex
+						&& array[j].compareTo(tmp) < 0; j -= increment)
+					array[j + increment] = array[j];
+			} else {
+				for (j = i - increment; j >= lowindex
+						&& array[j].compareTo(tmp) > 0; j -= increment)
+					array[j + increment] = array[j];
+			}
+			array[j + increment] = tmp;
+		}
+	}
+
+	@Override
+	public void bucketSort(int[] array, int lowindex, int highindex, boolean reversed) {
+		int i;
+		
+		int min = Integer.MAX_VALUE;
+		int max = Integer.MIN_VALUE;
+		for (i = lowindex; i <= highindex; i++) {
+			if (array[i] < min)
+				min = array[i];
+			if (array[i] > max)
+				max = array[i];
+		}
+		
+		int bucketNum = (highindex - lowindex + 2) / 2;
+		long size = ((long) max - min + bucketNum) / bucketNum;
+		
+		LLNode[] buckets = new LLNode[bucketNum];
+		
+		int bucketIndex;
+		for (i = lowindex; i <= highindex; i++) {
+			bucketIndex = (int) (((long) array[i] - min) / size);
+			if (buckets[bucketIndex] == null) {
+				buckets[bucketIndex] = new LLNode(array[i]);
+			} else {
+				LLNode tmp = new LLNode(array[i]);
+				LLNode head = buckets[bucketIndex];
+				if (reversed) {
+					if (head.elem().compareTo(tmp.elem()) < 0) {
+						tmp.setNext(head);
+						buckets[bucketIndex] = tmp;
+					} else {
+						while (head.next() != null
+								&& head.next().elem().compareTo(tmp.elem()) > 0)
+							head = head.next();
+						tmp.setNext(head.next());
+						head.setNext(tmp);
+					}
+				} else {
+					if (head.elem().compareTo(tmp.elem()) > 0) {
+						tmp.setNext(head);
+						buckets[bucketIndex] = tmp;
+					} else {
+						while (head.next() != null
+								&& head.next().elem().compareTo(tmp.elem()) < 0)
+							head = head.next();
+						tmp.setNext(head.next());
+						head.setNext(tmp);
+					}
+				}
+			}
+		}
+		
+		int loc = lowindex;
+		if (reversed) {
+			for (i = bucketNum - 1; i >= 0; i--) {
+				LLNode head = buckets[i];
+				while (head != null) {
+					array[loc] = (Integer) head.elem();
+					head = head.next();
+					loc++;
+				}
+			}
+		} else {
+			for (i = 0; i < bucketNum; i++) {
+				LLNode head = buckets[i];
+				while (head != null) {
+					array[loc] = (Integer) head.elem();
+					head = head.next();
+					loc++;
+				}
+			}
+		}
+	}
+
+	@Override
+	public void heapSort(Comparable[] array, int lowindex, int highindex, boolean reversed) {
+		int curr, i, size;
+		Comparable tmp;
+		
+		if (reversed) {
+			minHeapify(array, lowindex, highindex);
+		} else {
+			maxHeapify(array, lowindex, highindex);
+		}
+		
+		for (i = highindex; i > lowindex; i--) {
+			size = i - lowindex;
+			tmp = array[lowindex];
+			array[lowindex] = array[i];
+			array[i] = tmp;
+			curr = lowindex;
+			while (curr - lowindex < size / 2) {
+				int loc = lowindex + 2 * (curr - lowindex) + 1;
+				if (reversed) {
+					if (loc < i - 1 && array[loc].compareTo(array[loc + 1]) > 0)
+						loc = loc + 1;
+					if (array[curr].compareTo(array[loc]) < 0)
+						break;
+				} else {
+					if (loc < i - 1 && array[loc].compareTo(array[loc + 1]) < 0)
+						loc = loc + 1;
+					if (array[curr].compareTo(array[loc]) > 0)
+						break;
+				}
+				tmp = array[curr];
+				array[curr] = array[loc];
+				array[loc] = tmp;
+				curr = loc;
+			}
+		}
+	}
+	
+	private static void maxHeapify(Comparable[] array, int lowindex, int highindex) {
+		int i;
+		Comparable tmp;
+		
+		int size = highindex - lowindex + 1;
+		for (i = lowindex + (highindex - lowindex - 1) / 2; i >= lowindex; i--) {
+			int curr = i;
+			while (curr - lowindex < size / 2) {
+				int loc = lowindex + 2 * (curr - lowindex) + 1;
+				if (loc < highindex && array[loc].compareTo(array[loc + 1]) < 0)
+					loc = loc + 1;
+				if (array[curr].compareTo(array[loc]) > 0)
+					break;
+				tmp = array[curr];
+				array[curr] = array[loc];
+				array[loc] = tmp;
+				curr = loc;
+			}
+		}
+	}
+	
+	private static void minHeapify(Comparable[] array, int lowindex, int highindex) {
+		int i;
+		Comparable tmp;
+		
+		int size = highindex - lowindex + 1;
+		for (i = lowindex + (highindex - lowindex - 1) / 2; i >= lowindex; i--) {
+			int curr = i;
+			while (curr - lowindex < size / 2) {
+				int loc = lowindex + 2 * (curr - lowindex) + 1;
+				if (loc < highindex && array[loc].compareTo(array[loc + 1]) > 0)
+					loc = loc + 1;
+				if (array[curr].compareTo(array[loc]) < 0)
+					break;
+				tmp = array[curr];
+				array[curr] = array[loc];
+				array[loc] = tmp;
+				curr = loc;
+			}
+		}
+	}
+
+	@Override
+	public void radixSort(int[] array, int lowindex, int highindex, boolean reversed) {
+		int i, j, rtok;
+		int max = Integer.MIN_VALUE;
+		
+		int r = highindex - lowindex + 1;
+		
+		for (i = lowindex; i <= highindex; i++)
+			if (array[i] > max)
+				max = array[i];
+		
+		int k = 0;
+		while (max > 0) {
+			k++;
+			max /= r;
+		}
+
+		int[] B = new int[highindex - lowindex + 1];
+		int[] count = new int[r];
+		
+		for (i = 0, rtok = 1; i < k; i++, rtok *= r) {
+			for (j = 0; j < r; j++)
+				count[j] = 0;
+			for (j = lowindex; j <= highindex; j++)
+				count[(array[j] / rtok) % r]++;
+			if (reversed) {
+				for (j = r - 2; j >= 0; j--)
+					count[j] = count[j] + count[j + 1];
+			} else {
+				for (j = 1; j < r; j++)
+					count[j] = count[j - 1] + count[j];
+			}
+			for (j = highindex; j >= lowindex; j--)
+				B[--count[(array[j] / rtok) % r]] = array[j];
+			for (j = lowindex; j <= highindex; j++)
+				array[j] = B[j - lowindex];
+		}
+	}
+
+	@Override
+	public void mergeSort(Comparable[] array, int lowindex, int highindex, boolean reversed) {
+		Comparable[] tmp = new Comparable[array.length];
+		mergeSort(array, tmp, lowindex, highindex, reversed);
+	}
+	
+	private static void merge(Comparable[] array, Comparable[] tmp, int low, int mid, int high, boolean reversed) {
+		int loc = low;
+		int lowindex = low;
+		int highindex = mid + 1;
+		
+		while (loc <= high) {
+			if (lowindex > mid)
+				tmp[loc++] = array[highindex++];
+			else if (highindex > high)
+				tmp[loc++] = array[lowindex++];
+			else {
+				if (reversed) {
+					if (array[lowindex].compareTo(array[highindex]) > 0)
+						tmp[loc++] = array[lowindex++];
+					else
+						tmp[loc++] = array[highindex++];
+				} else {
+					if (array[lowindex].compareTo(array[highindex]) < 0)
+						tmp[loc++] = array[lowindex++];
+					else
+						tmp[loc++] = array[highindex++];
+				}
+			}
+		}
+		for (loc = low; loc <= high; loc++)
+			array[loc] = tmp[loc];
+	}
+	
+	private static void mergeSort(Comparable[] array, Comparable[] tmp, int low, int high, boolean reversed) {
+		if (low >= high)
+			return;
+		
+		int mid = (low + high) / 2;
+		mergeSort(array, tmp, low, mid, reversed);
+		mergeSort(array, tmp, mid + 1, high, reversed);
+		
+		merge(array, tmp, low, mid, high, reversed);
+	}
+
+	@Override
+	public void quickSort(Comparable[] array, int lowindex, int highindex, boolean reversed) {
+		int pivot;
+		
+		if (lowindex < highindex) {
+			pivot = partition(array, lowindex, highindex, reversed);
+			quickSort(array, lowindex, pivot - 1, reversed);
+			quickSort(array, pivot + 1, highindex, reversed);
+		}
+	}
+	
+	private static int partition(Comparable[] array, int low, int high, boolean reversed) {
+		Comparable pivot, tmp;
+		int max = high;
+		int mid = (low + high) / 2;
+		int pivotIndex;
+		
+		if (array[low].compareTo(array[high]) > 0) {
+			if (array[low].compareTo(array[mid]) > 0) {
+				if (array[mid].compareTo(array[high]) > 0) {
+					pivot = array[mid];
+					pivotIndex = mid;
+				} else {
+					pivot = array[high];
+					pivotIndex = high;
+				}
+			} else {
+				pivot = array[low];
+				pivotIndex = low;
+			}
+		} else {
+			if (array[high].compareTo(array[mid]) > 0) {
+				if (array[low].compareTo(array[mid]) > 0) {
+					pivot = array[low];
+					pivotIndex = low;
+				} else {
+					pivot = array[mid];
+					pivotIndex = mid;
+				}
+			} else {
+				pivot = array[high];
+				pivotIndex = high;
+			}
+		}
+		tmp = array[pivotIndex];
+		array[pivotIndex] = array[high];
+		array[high] = tmp;
+		
+		low--;
+		do {
+			if (reversed) {
+				while (array[++low].compareTo(pivot) > 0);
+				while (low < high && array[--high].compareTo(pivot) < 0);
+			} else {
+				while (array[++low].compareTo(pivot) < 0);
+				while (low < high && array[--high].compareTo(pivot) > 0);
+			}
+			tmp = array[low];
+			array[low] = array[high];
+			array[high] = tmp;
+		} while (low < high);
+		tmp = array[low];
+		array[low] = array[max];
+		array[max] = tmp;
+		return low;
+	}
+
+	@Override
+	public LLNode mergeSortLL(LLNode list, boolean reversed) {
+		if (list.next() == null)
+			return list;
+		
+		LLNode tail = list;
+		LLNode low = list;
+		LLNode high = list;
+		while (high != null && high.next() != null) {
+			tail = low;
+			low = low.next();
+			high = high.next().next();
+		}
+		tail.setNext(null);
+		
+		LLNode left = mergeSortLL(list, reversed);
+		LLNode right = mergeSortLL(low, reversed);
+		
+		return merge(left, right, reversed);
+	}
+	
+	private static LLNode merge(LLNode left, LLNode right, boolean reversed) {
+		LLNode head, main, other, tmp;
+		if (left.elem().compareTo(right.elem()) < 0) {
+			if (reversed) {
+				head = right;
+				main = right;
+				other = left;
+			} else {
+				head = left;
+				main = left;
+				other = right;
+			}
+		} else {
+			if (reversed) {
+				head = left;
+				main = left;
+				other = right;
+			} else {
+				head = right;
+				main = right;
+				other = left;
+			}
+		}
+		
+    
+    
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 }
+			tmp = other;
+			other = other.next();
+			tmp.setNext(main.next());
+			main.setNext(tmp);
+			if (other == null)
+				break;
+		}
+		
+		return head;
+	}
+
+	@Override
+	public LLNode insertionSortLL(LLNode list, boolean reversed) {
+		LLNode curr, insert, tmp;
+		
+		curr = list.next();
+		list.setNext(null);
+		
+		while (curr != null) {
+			tmp = list;
+			insert = curr;
+			curr = curr.next();
+			if (reversed) {
+				if (tmp.elem().compareTo(insert.elem()) < 0) {
+					insert.setNext(tmp);
+					list = insert;
+					continue;
+				}
+			} else {
+				if (tmp.elem().compareTo(insert.elem()) > 0) {
+					insert.setNext(tmp);
+					list = insert;
+					continue;
+				}
+			}
+			if (reversed) {
+				while (tmp.next() != null && tmp.next().elem().compareTo(insert.elem()) > 0)
+					tmp = tmp.next();
+			} else {
+				while (tmp.next() != null && tmp.next().elem().compareTo(insert.elem()) < 0)
+					tmp = tmp.next();	
+			}
+			insert.setNext(tmp.next());
+			tmp.setNext(insert);
+		}
+		
+		return list;
+	}
+
+	@Override
+	public void optimziedQuickSort(Comparable[] array, int lowindex, int highindex, boolean reversed) {
+		if (highindex - lowindex + 1 < 64) {
+			shellSort(array, lowindex, highindex, reversed);
+			return;
+		}
+		
+		int pivot;
+		
+		if (lowindex < highindex) {
+			pivot = partition(array, lowindex, highindex, reversed);
+			quickSort(array, lowindex, pivot - 1, reversed);
+			quickSort(array, pivot + 1, highindex, reversed);
+		}
+		
+	}
+	
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		/*
+		LLNode a = new LLNode(1);
+		LLNode b = new LLNode(2);
+		LLNode c = new LLNode(3);
+		a.setNext(b);
+		b.setNext(c);
+		LLNode tmp = b;
+		LLNode test = tmp;
+		System.out.println(a != tmp);
+		*/
+		
+		Sort s = new Sort();
+		//int[] l = {9, 28, 35, 41, 5, 37, 23, 1, 12, 2, 17, 4, 42, 29, 48, 16, 21, 7, 19, 40, 43, 11, 31, 8, 18, 38, 27, 13, 30, 47, 46, 22, 26, 24, 6, 36, 3, 25, 15, 33, 34, 39, 10, 32, 44, 45, 14, 49, 20};
+		Integer[] l = {9, 28, 35, 41, 5, 37, 23, 1, 12, 2, 17, 4, 42, 29, 48, 16, 21, 7, 19, 40, 43, 11, 31, 8, 18, 38, 27, 13, 30, 47, 46, 22, 26, 24, 6, 36, 3, 25, 15, 33, 34, 39, 10, 32, 44, 45, 14, 49, 20};
+		//Integer[] l = {9, 6, 1, 5, 8, 7, 3, 2, 4, 10};
+		/*LLNode head = new LLNode(9);
+		LLNode tmp = head;
+		for (Integer i : l) {
+			if (i == 9)
+				continue;
+			LLNode n = new LLNode(i);
+			tmp.setNext(n);
+			tmp = tmp.next();
+		}*/
+		//s.print(head);
+		//head = s.insertionSortLL(head, false);
+		//s.print(head);
+		//maxHeapify(l, 2, 8);
+		s.print(l);
+		s.optimziedQuickSort(l, 0, 48, false);
+		s.print(l);
+		
+	}
+
+}

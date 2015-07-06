@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Register Page</title>
+    <!-- <link href="http://getbootstrap.com/dist/css/bootstrap.css" rel="stylesheet"> -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+    <link href="custom.css" type="text/css" rel="stylesheet">
+
+    <script type="text/javascript" src="formvalidation-master/dist/js/bootstrapValidator.js"></script>
+    <link rel="stylesheet" href="formvalidation-master/dist/css/bootstrapValidator.css"/>
+</head>
+
+<body class="Regist">
+    <div class="container">
+        <form class="form-horizontal" role="form">
+            <div class="form-group">
+                <label for="registerEmail" class="col-sm-2 control-label">Email Address: </label>
+                <div class="col-sm-9">
+                    <input type="email" class="form-control" id="registerEmail" autofocus="">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="registerName" class="col-sm-2 control-label">Nickname: </label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" id="registerName">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="registerPWD" class="col-sm-2 control-label">Password: </label>
+                <div class="col-sm-9">
+                    <input type="password" class="form-control" id="registerPWD">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="comfirmPWD" class="col-sm-2 control-label">Comfirm Password: </label>
+                <div class="col-sm-9">
+                    <input type="password" class="form-control" id="comfirmPWD">
+                </div>
+            </div>
+            <div class="signup">
+                <button class="btn btn-lg btn-primary" type="submit">Sign up</button>
+            </div>
+        </form>
+    </div>
+    <script src="http://code.jquery.com/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+    <script scr="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/files/templates/signup-form.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+    MyValidator.init();
+    </script>
+</body>
+
+</html>

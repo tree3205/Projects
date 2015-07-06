@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="500" key="CommitDialog.weights.0"/>
+	<item value="/Users/treexy1230/Documents/workspace/CS245/project1" key="ExportAction.lastLocation"/>
+	<item value="500" key="CommitDialog.weights.1"/>
+	<item value="126" key="CommitDialog.location.y"/>
+	<item value="/Users/treexy1230/Documents/workspace/CS245/project1" key="ExportAction.lastLocation./project1"/>
+	<item value="554" key="passwordStores.size.y"/>
+	<item value="156" key="CommitDialog.location.x"/>
+	<item value="546" key="passwordStores.size.x"/>
+	<item value="22" key="passwordStores.location.y"/>
+	<item value="447" key="passwordStores.location.x"/>
+	<item value="1127" key="CommitDialog.size.x"/>
+	<item value="449" key="CommitDialog.size.y"/>
+	<section name="CommitWizard">
+		<item value="false" key="ShowCompare"/>
+		<item value="500" key="VWeight2"/>
+		<item value="500" key="VWeight1"/>
+	</section>
+	<section name="NewLocationWizard">
+		<list key="ConfigurationWizardMainPage.STORE_URL_ID">
+			<item value="https://cs.usfca.edu/svn/yxu66/cs245"/>
+			<item value="https://www.cs.usfca.edu/svn/yxu/cs245"/>
+			<item value="https://cs.usfca.edu/svn/cs245"/>
+			<item value="https://cs.usfca.edu/svn/yxu66"/>
+		</list>
+	</section>
+</section>

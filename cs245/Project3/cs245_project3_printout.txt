@@ -1,0 +1,402 @@
+https://cs.usfca.edu/svn/yxu66/cs245/Project3
+
+Result on array size: 5
+Insertion Sort | Reverse = False | Duration = 0.00155
+Selection Sort | Reverse = False | Duration = 0.0017
+Shell Sort | Reverse = False | Duration = 0.00165
+Bucket Sort | Reverse = False | Duration = 0.00165
+Heap Sort | Reverse = False | Duration = 0.00315
+Radix Sort | Reverse = False | Duration = 0.0025
+Merge Sort | Reverse = False | Duration = 0.00345
+Quick Sort | Reverse = False | Duration = 0.0056
+Merge Sort LL | Reverse = False | Duration = 0.0062
+Insertion Sort LL | Reverse = False | Duration = 0.00145
+Optimized Quick Sort | Reverse = False | Duration = 0.0029
+
+Insertion Sort | Reverse = True | Duration = 0.00125
+Selection Sort | Reverse = True | Duration = 1.0E-4
+Shell Sort | Reverse = True | Duration = 1.0E-4
+Bucket Sort | Reverse = True | Duration = 3.5E-4
+Heap Sort | Reverse = True | Duration = 0.0023
+Radix Sort | Reverse = True | Duration = 0.00165
+Merge Sort | Reverse = True | Duration = 3.5E-4
+Quick Sort | Reverse = True | Duration = 0.00675
+Merge Sort LL | Reverse = True | Duration = 5.0E-5
+Insertion Sort LL | Reverse = True | Duration = 5.0E-5
+Optimized Quick Sort | Reverse = True | Duration = 0.0054
+==================
+Result on array size: 20
+Insertion Sort | Reverse = False | Duration = 2.0E-4
+Selection Sort | Reverse = False | Duration = 6.0E-4
+Shell Sort | Reverse = False | Duration = 0.0014
+Bucket Sort | Reverse = False | Duration = 0.0012
+Heap Sort | Reverse = False | Duration = 8.0E-4
+Radix Sort | Reverse = False | Duration = 0.0028
+Merge Sort | Reverse = False | Duration = 0.0010
+Quick Sort | Reverse = False | Duration = 0.022
+Merge Sort LL | Reverse = False | Duration = 0.0298
+Insertion Sort LL | Reverse = False | Duration = 0.0
+Optimized Quick Sort | Reverse = False | Duration = 4.0E-4
+
+Insertion Sort | Reverse = True | Duration = 2.0E-4
+Selection Sort | Reverse = True | Duration = 0.0014
+Shell Sort | Reverse = True | Duration = 4.0E-4
+Bucket Sort | Reverse = True | Duration = 6.0E-4
+Heap Sort | Reverse = True | Duration = 4.0E-4
+Radix Sort | Reverse = True | Duration = 0.0028
+Merge Sort | Reverse = True | Duration = 0.0016
+Quick Sort | Reverse = True | Duration = 0.0018
+Merge Sort LL | Reverse = True | Duration = 0.0012
+Insertion Sort LL | Reverse = True | Duration = 0.0
+Optimized Quick Sort | Reverse = True | Duration = 8.0E-4
+==================
+Result on array size: 50
+Insertion Sort | Reverse = False | Duration = 0.0055
+Selection Sort | Reverse = False | Duration = 0.0025
+Shell Sort | Reverse = False | Duration = 0.0010
+Bucket Sort | Reverse = False | Duration = 0.0020
+Heap Sort | Reverse = False | Duration = 0.0020
+Radix Sort | Reverse = False | Duration = 0.0055
+Merge Sort | Reverse = False | Duration = 0.0045
+Quick Sort | Reverse = False | Duration = 0.0020
+Merge Sort LL | Reverse = False | Duration = 0.0050
+Insertion Sort LL | Reverse = False | Duration = 0.0025
+Optimized Quick Sort | Reverse = False | Duration = 0.0010
+
+Insertion Sort | Reverse = True | Duration = 5.0E-4
+Selection Sort | Reverse = True | Duration = 0.0090
+Shell Sort | Reverse = True | Duration = 0.0010
+Bucket Sort | Reverse = True | Duration = 0.0025
+Heap Sort | Reverse = True | Duration = 0.0020
+Radix Sort | Reverse = True | Duration = 0.0060
+Merge Sort | Reverse = True | Duration = 0.0040
+Quick Sort | Reverse = True | Duration = 0.0010
+Merge Sort LL | Reverse = True | Duration = 0.0
+Insertion Sort LL | Reverse = True | Duration = 0.0
+Optimized Quick Sort | Reverse = True | Duration = 0.0010
+==================
+Result on array size: 100
+Insertion Sort | Reverse = False | Duration = 0.0
+Selection Sort | Reverse = False | Duration = 0.01
+Shell Sort | Reverse = False | Duration = 0.0030
+Bucket Sort | Reverse = False | Duration = 0.0030
+Heap Sort | Reverse = False | Duration = 0.0040
+Radix Sort | Reverse = False | Duration = 0.01
+Merge Sort | Reverse = False | Duration = 0.0070
+Quick Sort | Reverse = False | Duration = 0.0030
+Merge Sort LL | Reverse = False | Duration = 0.0
+Insertion Sort LL | Reverse = False | Duration = 0.0
+Optimized Quick Sort | Reverse = False | Duration = 0.0020
+
+Insertion Sort | Reverse = True | Duration = 0.0010
+Selection Sort | Reverse = True | Duration = 0.037
+Shell Sort | Reverse = True | Duration = 0.0030
+Bucket Sort | Reverse = True | Duration = 0.0030
+Heap Sort | Reverse = True | Duration = 0.0050
+Radix Sort | Reverse = True | Duration = 0.0080
+Merge Sort | Reverse = True | Duration = 0.0090
+Quick Sort | Reverse = True | Duration = 0.0040
+Merge Sort LL | Reverse = True | Duration = 0.0
+Insertion Sort LL | Reverse = True | Duration = 0.0
+Optimized Quick Sort | Reverse = True | Duration = 0.0030
+==================
+Result on array size: 200
+Insertion Sort | Reverse = False | Duration = 0.0
+Selection Sort | Reverse = False | Duration = 0.036
+Shell Sort | Reverse = False | Duration = 0.0080
+Bucket Sort | Reverse = False | Duration = 0.0080
+Heap Sort | Reverse = False | Duration = 0.01
+Radix Sort | Reverse = False | Duration = 0.014
+Merge Sort | Reverse = False | Duration = 0.016
+Quick Sort | Reverse = False | Duration = 0.0040
+Merge Sort LL | Reverse = False | Duration = 0.0040
+Insertion Sort LL | Reverse = False | Duration = 0.034
+Optimized Quick Sort | Reverse = False | Duration = 0.0060
+
+Insertion Sort | Reverse = True | Duration = 0.0
+Selection Sort | Reverse = True | Duration = 0.138
+Shell Sort | Reverse = True | Duration = 0.0060
+Bucket Sort | Reverse = True | Duration = 0.0060
+Heap Sort | Reverse = True | Duration = 0.012
+Radix Sort | Reverse = True | Duration = 0.014
+Merge Sort | Reverse = True | Duration = 0.016
+Quick Sort | Reverse = True | Duration = 0.0060
+Merge Sort LL | Reverse = True | Duration = 0.0
+Insertion Sort LL | Reverse = True | Duration = 0.0
+Optimized Quick Sort | Reverse = True | Duration = 0.0060
+==================
+Result on array size: 300
+Insertion Sort | Reverse = False | Duration = 0.0
+Selection Sort | Reverse = False | Duration = 0.07507507507507508
+Shell Sort | Reverse = False | Duration = 0.012012012012012012
+Bucket Sort | Reverse = False | Duration = 0.009009009009009009
+Heap Sort | Reverse = False | Duration = 0.018018018018018018
+Radix Sort | Reverse = False | Duration = 0.018018018018018018
+Merge Sort | Reverse = False | Duration = 0.024024024024024024
+Quick Sort | Reverse = False | Duration = 0.006006006006006006
+Merge Sort LL | Reverse = False | Duration = 0.003003003003003003
+Insertion Sort LL | Reverse = False | Duration = 0.03303303303303303
+Optimized Quick Sort | Reverse = False | Duration = 0.006006006006006006
+
+Insertion Sort | Reverse = True | Duration = 0.003003003003003003
+Selection Sort | Reverse = True | Duration = 0.3213213213213213
+Shell Sort | Reverse = True | Duration = 0.012012012012012012
+Bucket Sort | Reverse = True | Duration = 0.012012012012012012
+Heap Sort | Reverse = True | Duration = 0.036036036036036036
+Radix Sort | Reverse = True | Duration = 0.02702702702702703
+Merge Sort | Reverse = True | Duration = 0.02702702702702703
+Quick Sort | Reverse = True | Duration = 0.006006006006006006
+Merge Sort LL | Reverse = True | Duration = 0.0
+Insertion Sort LL | Reverse = True | Duration = 0.0
+Optimized Quick Sort | Reverse = True | Duration = 0.009009009009009009
+==================
+Result on array size: 400
+Insertion Sort | Reverse = False | Duration = 0.0
+Selection Sort | Reverse = False | Duration = 0.148
+Shell Sort | Reverse = False | Duration = 0.016
+Bucket Sort | Reverse = False | Duration = 0.012
+Heap Sort | Reverse = False | Duration = 0.044
+Radix Sort | Reverse = False | Duration = 0.024
+Merge Sort | Reverse = False | Duration = 0.032
+Quick Sort | Reverse = False | Duration = 0.012
+Merge Sort LL | Reverse = False | Duration = 0.0040
+Insertion Sort LL | Reverse = False | Duration = 0.08
+Optimized Quick Sort | Reverse = False | Duration = 0.012
+
+Insertion Sort | Reverse = True | Duration = 0.0040
+Selection Sort | Reverse = True | Duration = 0.584
+Shell Sort | Reverse = True | Duration = 0.016
+Bucket Sort | Reverse = True | Duration = 0.012
+Heap Sort | Reverse = True | Duration = 0.036
+Radix Sort | Reverse = True | Duration = 0.024
+Merge Sort | Reverse = True | Duration = 0.036
+Quick Sort | Reverse = True | Duration = 0.012
+Merge Sort LL | Reverse = True | Duration = 0.0
+Insertion Sort LL | Reverse = True | Duration = 0.0
+Optimized Quick Sort | Reverse = True | Duration = 0.0080
+==================
+Result on array size: 500
+Insertion Sort | Reverse = False | Duration = 0.0
+Selection Sort | Reverse = False | Duration = 0.21
+Shell Sort | Reverse = False | Duration = 0.015
+Bucket Sort | Reverse = False | Duration = 0.015
+Heap Sort | Reverse = False | Duration = 0.04
+Radix Sort | Reverse = False | Duration = 0.03
+Merge Sort | Reverse = False | Duration = 0.055
+Quick Sort | Reverse = False | Duration = 0.01
+Merge Sort LL | Reverse = False | Duration = 0.0
+Insertion Sort LL | Reverse = False | Duration = 0.0
+Optimized Quick Sort | Reverse = False | Duration = 0.01
+
+Insertion Sort | Reverse = True | Duration = 0.0050
+Selection Sort | Reverse = True | Duration = 0.855
+Shell Sort | Reverse = True | Duration = 0.015
+Bucket Sort | Reverse = True | Duration = 0.015
+Heap Sort | Reverse = True | Duration = 0.05
+Radix Sort | Reverse = True | Duration = 0.025
+Merge Sort | Reverse = True | Duration = 0.045
+Quick Sort | Reverse = True | Duration = 0.015
+Merge Sort LL | Reverse = True | Duration = 0.0
+Insertion Sort LL | Reverse = True | Duration = 0.0
+Optimized Quick Sort | Reverse = True | Duration = 0.015
+==================
+Result on array size: 1000
+Insertion Sort | Reverse = False | Duration = 0.01
+Selection Sort | Reverse = False | Duration = 0.82
+Shell Sort | Reverse = False | Duration = 0.05
+Bucket Sort | Reverse = False | Duration = 0.03
+Heap Sort | Reverse = False | Duration = 0.12
+Radix Sort | Reverse = False | Duration = 0.08
+Merge Sort | Reverse = False | Duration = 0.09
+Quick Sort | Reverse = False | Duration = 0.03
+Merge Sort LL | Reverse = False | Duration = 0.0
+Insertion Sort LL | Reverse = False | Duration = 0.01
+Optimized Quick Sort | Reverse = False | Duration = 0.03
+
+Insertion Sort | Reverse = True | Duration = 0.01
+Selection Sort | Reverse = True | Duration = 3.38
+Shell Sort | Reverse = True | Duration = 0.04
+Bucket Sort | Reverse = True | Duration = 0.03
+Heap Sort | Reverse = True | Duration = 0.12
+Radix Sort | Reverse = True | Duration = 0.06
+Merge Sort | Reverse = True | Duration = 0.1
+Quick Sort | Reverse = True | Duration = 0.03
+Merge Sort LL | Reverse = True | Duration = 0.0
+Insertion Sort LL | Reverse = True | Duration = 0.0
+Optimized Quick Sort | Reverse = True | Duration = 0.02
+==================
+Result on array size: 2000
+Insertion Sort | Reverse = False | Duration = 0.04
+Selection Sort | Reverse = False | Duration = 3.3
+Shell Sort | Reverse = False | Duration = 0.1
+Bucket Sort | Reverse = False | Duration = 0.08
+Heap Sort | Reverse = False | Duration = 0.22
+Radix Sort | Reverse = False | Duration = 0.08
+Merge Sort | Reverse = False | Duration = 0.2
+Quick Sort | Reverse = False | Duration = 0.06
+Merge Sort LL | Reverse = False | Duration = 0.04
+Insertion Sort LL | Reverse = False | Duration = 2.48
+Optimized Quick Sort | Reverse = False | Duration = 0.1
+
+Insertion Sort | Reverse = True | Duration = 0.02
+Selection Sort | Reverse = True | Duration = 14.36
+Shell Sort | Reverse = True | Duration = 0.08
+Bucket Sort | Reverse = True | Duration = 0.08
+Heap Sort | Reverse = True | Duration = 0.26
+Radix Sort | Reverse = True | Duration = 0.08
+Merge Sort | Reverse = True | Duration = 0.22
+Quick Sort | Reverse = True | Duration = 0.06
+Merge Sort LL | Reverse = True | Duration = 0.0
+Insertion Sort LL | Reverse = True | Duration = 0.0
+Optimized Quick Sort | Reverse = True | Duration = 0.08
+==================
+Result on array size: 3000
+Insertion Sort | Reverse = False | Duration = 0.12121212121212122
+Selection Sort | Reverse = False | Duration = 7.484848484848484
+Shell Sort | Reverse = False | Duration = 0.15151515151515152
+Bucket Sort | Reverse = False | Duration = 0.12121212121212122
+Heap Sort | Reverse = False | Duration = 0.36363636363636365
+Radix Sort | Reverse = False | Duration = 0.12121212121212122
+Merge Sort | Reverse = False | Duration = 0.3333333333333333
+Quick Sort | Reverse = False | Duration = 0.09090909090909091
+Merge Sort LL | Reverse = False | Duration = 0.09090909090909091
+Insertion Sort LL | Reverse = False | Duration = 8.0
+Optimized Quick Sort | Reverse = False | Duration = 0.12121212121212122
+
+Insertion Sort | Reverse = True | Duration = 0.09090909090909091
+Selection Sort | Reverse = True | Duration = 31.060606060606062
+Shell Sort | Reverse = True | Duration = 0.18181818181818182
+Bucket Sort | Reverse = True | Duration = 0.15151515151515152
+Heap Sort | Reverse = True | Duration = 0.42424242424242425
+Radix Sort | Reverse = True | Duration = 0.12121212121212122
+Merge Sort | Reverse = True | Duration = 0.36363636363636365
+Quick Sort | Reverse = True | Duration = 0.09090909090909091
+Merge Sort LL | Reverse = True | Duration = 0.0
+Insertion Sort LL | Reverse = True | Duration = 0.0
+Optimized Quick Sort | Reverse = True | Duration = 0.12121212121212122
+==================
+Result on array size: 4000
+Insertion Sort | Reverse = False | Duration = 0.28
+Selection Sort | Reverse = False | Duration = 13.4
+Shell Sort | Reverse = False | Duration = 0.24
+Bucket Sort | Reverse = False | Duration = 0.16
+Heap Sort | Reverse = False | Duration = 0.48
+Radix Sort | Reverse = False | Duration = 0.2
+Merge Sort | Reverse = False | Duration = 0.44
+Quick Sort | Reverse = False | Duration = 0.12
+Merge Sort LL | Reverse = False | Duration = 0.24
+Insertion Sort LL | Reverse = False | Duration = 42.32
+Optimized Quick Sort | Reverse = False | Duration = 0.12
+
+Insertion Sort | Reverse = True | Duration = 0.2
+Selection Sort | Reverse = True | Duration = 54.32
+Shell Sort | Reverse = True | Duration = 0.2
+Bucket Sort | Reverse = True | Duration = 0.16
+Heap Sort | Reverse = True | Duration = 0.56
+Radix Sort | Reverse = True | Duration = 0.16
+Merge Sort | Reverse = True | Duration = 0.48
+Quick Sort | Reverse = True | Duration = 0.16
+Merge Sort LL | Reverse = True | Duration = 0.0
+Insertion Sort LL | Reverse = True | Duration = 0.04
+Optimized Quick Sort | Reverse = True | Duration = 0.12
+==================
+Result on array size: 5000
+Insertion Sort | Reverse = False | Duration = 0.5
+Selection Sort | Reverse = False | Duration = 21.1
+Shell Sort | Reverse = False | Duration = 0.35
+Bucket Sort | Reverse = False | Duration = 0.25
+Heap Sort | Reverse = False | Duration = 0.65
+Radix Sort | Reverse = False | Duration = 0.2
+Merge Sort | Reverse = False | Duration = 0.6
+Quick Sort | Reverse = False | Duration = 0.2
+Merge Sort LL | Reverse = False | Duration = 0.2
+Insertion Sort LL | Reverse = False | Duration = 41.25
+Optimized Quick Sort | Reverse = False | Duration = 0.15
+
+Insertion Sort | Reverse = True | Duration = 0.45
+Selection Sort | Reverse = True | Duration = 85.7
+Shell Sort | Reverse = True | Duration = 0.3
+Bucket Sort | Reverse = True | Duration = 0.2
+Heap Sort | Reverse = True | Duration = 0.7
+Radix Sort | Reverse = True | Duration = 0.2
+Merge Sort | Reverse = True | Duration = 0.65
+Quick Sort | Reverse = True | Duration = 0.2
+Merge Sort LL | Reverse = True | Duration = 0.0
+Insertion Sort LL | Reverse = True | Duration = 0.0
+Optimized Quick Sort | Reverse = True | Duration = 0.2
+==================
+Result on array size: 10000
+Insertion Sort | Reverse = False | Duration = 4.0
+Selection Sort | Reverse = False | Duration = 88.3
+Shell Sort | Reverse = False | Duration = 0.8
+Bucket Sort | Reverse = False | Duration = 0.4
+Heap Sort | Reverse = False | Duration = 1.4
+Radix Sort | Reverse = False | Duration = 0.4
+Merge Sort | Reverse = False | Duration = 1.3
+Quick Sort | Reverse = False | Duration = 0.5
+Merge Sort LL | Reverse = False | Duration = 0.2
+Insertion Sort LL | Reverse = False | Duration = 28.4
+Optimized Quick Sort | Reverse = False | Duration = 0.4
+
+Insertion Sort | Reverse = True | Duration = 3.4
+Selection Sort | Reverse = True | Duration = 333.7
+Shell Sort | Reverse = True | Duration = 0.8
+Bucket Sort | Reverse = True | Duration = 0.5
+Heap Sort | Reverse = True | Duration = 1.5
+Radix Sort | Reverse = True | Duration = 0.5
+Merge Sort | Reverse = True | Duration = 1.3
+Quick Sort | Reverse = True | Duration = 0.5
+Merge Sort LL | Reverse = True | Duration = 0.0
+Insertion Sort LL | Reverse = True | Duration = 0.0
+Optimized Quick Sort | Reverse = True | Duration = 0.4
+==================
+Result on array size: 50000
+Insertion Sort | Reverse = False | Duration = 619.0
+Selection Sort | Reverse = False | Duration = 2846.5
+Shell Sort | Reverse = False | Duration = 9.5
+Bucket Sort | Reverse = False | Duration = 2.5
+Heap Sort | Reverse = False | Duration = 10.0
+Radix Sort | Reverse = False | Duration = 1.5
+Merge Sort | Reverse = False | Duration = 31.5
+Quick Sort | Reverse = False | Duration = 5.0
+Merge Sort LL | Reverse = False | Duration = 9.5
+Insertion Sort LL | Reverse = False | Duration = 10758.5
+Optimized Quick Sort | Reverse = False | Duration = 4.5
+
+Insertion Sort | Reverse = True | Duration = 582.5
+Selection Sort | Reverse = True | Duration = 8689.0
+Shell Sort | Reverse = True | Duration = 9.0
+Bucket Sort | Reverse = True | Duration = 3.0
+Heap Sort | Reverse = True | Duration = 10.5
+Radix Sort | Reverse = True | Duration = 1.5
+Merge Sort | Reverse = True | Duration = 10.5
+Quick Sort | Reverse = True | Duration = 5.0
+Merge Sort LL | Reverse = True | Duration = 5.5
+Insertion Sort LL | Reverse = True | Duration = 1.0
+Optimized Quick Sort | Reverse = True | Duration = 5.0
+==================
+Result on array size: 100000
+Insertion Sort | Reverse = False | Duration = 5576.0
+Selection Sort | Reverse = False | Duration = 10851.0
+Shell Sort | Reverse = False | Duration = 33.0
+Bucket Sort | Reverse = False | Duration = 7.0
+Heap Sort | Reverse = False | Duration = 28.0
+Radix Sort | Reverse = False | Duration = 3.0
+Merge Sort | Reverse = False | Duration = 26.0
+Quick Sort | Reverse = False | Duration = 17.0
+Merge Sort LL | Reverse = False | Duration = 25.0
+Insertion Sort LL | Reverse = False | Duration = 44536.0
+Optimized Quick Sort | Reverse = False | Duration = 15.0
+
+Insertion Sort | Reverse = True | Duration = 5163.0
+Selection Sort | Reverse = True | Duration = 34126.0
+Shell Sort | Reverse = True | Duration = 32.0
+Bucket Sort | Reverse = True | Duration = 6.0
+Heap Sort | Reverse = True | Duration = 29.0
+Radix Sort | Reverse = True | Duration = 10.0
+Merge Sort | Reverse = True | Duration = 30.0
+Quick Sort | Reverse = True | Duration = 18.0
+Merge Sort LL | Reverse = True | Duration = 5.0
+Insertion Sort LL | Reverse = True | Duration = 2.0
+Optimized Quick Sort | Reverse = True | Duration = 17.0
+==================

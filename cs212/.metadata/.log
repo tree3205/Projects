@@ -1,0 +1,100 @@
+!SESSION 2012-08-30 12:12:20.256 -----------------------------------------------
+eclipse.buildId=I20120608-1400
+java.version=1.6.0_33
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -keyring /Users/treexy1230/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -keyring /Users/treexy1230/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2012-08-30 12:12:38.291
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2012-09-10 08:27:28.166 -----------------------------------------------
+eclipse.buildId=I20120608-1400
+java.version=1.6.0_35
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -keyring /Users/treexy1230/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -data /Users/treexy1230/Documents/workspace/CS212 -keyring /Users/treexy1230/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2012-09-10 08:27:31.107
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2012-09-10 08:28:17.393 -----------------------------------------------
+eclipse.buildId=I20120608-1400
+java.version=1.6.0_35
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -keyring /Users/treexy1230/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -keyring /Users/treexy1230/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2012-09-10 08:28:24.864
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2012-09-20 21:15:05.719 -----------------------------------------------
+eclipse.buildId=I20120608-1400
+java.version=1.6.0_35
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -keyring /Users/treexy1230/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -data /Users/treexy1230/Documents/workspace/CS212 -keyring /Users/treexy1230/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2012-09-20 21:15:08.743
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2012-10-02 21:42:25.371 -----------------------------------------------
+eclipse.buildId=I20120608-1400
+java.version=1.6.0_35
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -keyring /Users/treexy1230/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -data /Users/treexy1230/Documents/workspace/CS212 -keyring /Users/treexy1230/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2012-10-02 21:42:28.390
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2012-11-02 15:49:44.856 -----------------------------------------------
+eclipse.buildId=I20120608-1400
+java.version=1.6.0_37
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -keyring /Users/treexy1230/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -data /Users/treexy1230/Documents/workspace/CS212 -keyring /Users/treexy1230/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2012-11-02 15:49:47.900
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2012-11-14 22:38:26.694 -----------------------------------------------
+eclipse.buildId=I20120608-1400
+java.version=1.6.0_37
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -keyring /Users/treexy1230/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -data /Users/treexy1230/Documents/workspace/CS212 -keyring /Users/treexy1230/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2012-11-14 22:38:29.815
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2013-01-27 14:10:35.076 -----------------------------------------------
+eclipse.buildId=I20120608-1400
+java.version=1.6.0_37
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -keyring /Users/treexy1230/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -keyring /Users/treexy1230/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2013-01-27 14:10:54.857
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2013-02-01 10:40:42.035 -----------------------------------------------
+eclipse.buildId=I20120608-1400
+java.version=1.6.0_37
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -keyring /Users/treexy1230/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -keyring /Users/treexy1230/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2013-02-01 10:40:47.187
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+!SESSION 2013-02-08 15:52:47.047 -----------------------------------------------
+eclipse.buildId=I20120608-1400
+java.version=1.6.0_37
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -keyring /Users/treexy1230/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -keyring /Users/treexy1230/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2013-02-08 15:53:04.131
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences

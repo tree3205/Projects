@@ -1,0 +1,13 @@
+https://cs.usfca.edu/svn/yxu66/cs245/Project3/
+
+After running all of the sort algorithms except the hybrid one, I found that Insertion Sort and Shell Sort had a peak speed on the array whose size = 100.
+
+So I tried to mix quick sort with insertion sort and shell sort, which means I set a threshold in quick sort to triger the insertion sort and shell sort. If (highindex - lowindex + 1) < threshold, then I use insertion sort or shell sort instead of quick sort.
+
+I tried threshold = 50, 100, 150, 200, 250, 300, 350, 400, 450, 500 for both insertion sort and shell sort. However, to my sadness, I found the hybrid algorithm is a bit slower than the standard quick sort.
+
+Then I googled these two algorithms and found that lots of developers suggested that for a small data set, shell sort usually works faster than quick sort. However, for big data set, quick sort is really QUICK SORT. So I decided to optimize my quick sort with shell sort.
+
+Considering that we use 2^k -1 as the increment, I chose 63 as the threshold that triger the shell sort. Which means that in the recursive call of quick sort, if the (highindex - lowindex + 1) < 63, then it hits a base case! In this base case, I will use shell sort instead of quick sort to sort this subset.
+
+As a result, I found that the hybrid algorithm is almost as quick as the standard one. But it is much better than the previous hybrid version. So I use this as the final version.

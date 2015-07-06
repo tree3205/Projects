@@ -1,0 +1,261 @@
+/*For login page*/
+
+.Login {    
+    background-image: url("mail.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.Login .img-responsive {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+}
+
+.Login h1 {
+    color: #298edb;
+    font-size: 500%;
+}
+
+.Login p {
+    font-size: 120%;
+}
+
+/*For home page*/
+.Home {
+    background-color: #f5f5f5;
+    background-repeat: no-repeat;
+}
+
+.Home .navbar {
+    background-color: #b4b7ba;
+}
+
+.Home .welcome {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    height: 45px;
+    width: 250px;
+}
+
+.Home .navbar .nav a {
+    color: #ffffff;
+}
+
+.Home a {
+    color: #7f7e7e;
+}
+
+.Home .nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+    background-color: #717070;
+}
+
+.Home .compose {
+    position: relative;
+    left: 6%;
+    text-align: left;
+    line-height: 60%;
+}
+
+.Home .check {
+    position: relative;
+    left: 6%;
+    text-align: left;
+    line-height: 60%;
+}
+
+.Home .add {
+    position: relative;
+    left: 6%;
+    text-align: left;
+    line-height: 60%;
+}
+
+.Home .rename {
+    position: relative;
+    left: 6%;
+    text-align: left;
+    line-height: 60%;
+}
+
+.Home .btn {
+    background-color: #b4b7ba;
+    color: #ffffff;
+    width: 80%;
+    text-align: left;
+}
+
+.Home button.sendMail{
+  width: 60px;
+}
+
+.Home button.delete{
+  width: 60px;
+}
+
+.Home .btn-xs {
+    left: -3%;
+    text-align: left;
+}
+
+.Home .glyphicon {
+    float: right;
+    padding-left: 10px;
+}
+
+.Home .page {
+     text-align: center; 
+}
+
+.Home .page a{
+     color: #514f4f; 
+}
+
+/*For Register Page*/
+.Register {
+    background-image: url("register.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.Register .welcome{
+    width: 150px;
+}
+
+
+.Register .btn {
+    width: 200px;
+}
+
+/*For Send Mail Page*/
+.SendMail {
+    background-color: #f5f5f5;
+}
+
+.SendMail .col-lg-7 {
+    left: 5%;
+    width: 85%;
+}
+
+.SendMail h2.form-signin-heading {
+  text-align: center;
+}
+
+/*For add Mail page*/
+.AddMail {
+    background-image: url("register.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+/*For MailPage*/
+.MailPage {
+    background-color: #f5f5f5;
+    background-repeat: no-repeat;
+}
+
+.MailPage .navbar {
+    background-color: #b4b7ba;
+}
+
+.MailPage .welcome {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    height: 45px;
+    width: 250px;
+}
+
+.MailPage .navbar .nav a {
+    color: #ffffff;
+}
+
+.MailPage a {
+    color: #7f7e7e;
+}
+
+.MailPage .nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+    background-color: #717070;
+}
+
+.MailPage .compose {
+    position: relative;
+    left: 6%;
+    text-align: left;
+    line-height: 60%;
+}
+
+.MailPage .check {
+    position: relative;
+    left: 6%;
+    text-align: left;
+    line-height: 60%;
+}
+
+.MailPage .add {
+    position: relative;
+    left: 6%;
+    text-align: left;
+    line-height: 60%;
+}
+
+.MailPage .rename {
+    position: relative;
+    left: 6%;
+    text-align: left;
+    line-height: 60%;
+}
+
+.MailPage .btn {
+    background-color: #b4b7ba;
+    color: #ffffff;
+    width: 80%;
+    text-align: left;
+}
+
+.MailPage button.sendMail{
+  width: 60px;
+}
+
+/*.MailPage button.delete{
+  width: 60px;
+}*/
+
+.MailPage .btn-xs {
+    left: -3%;
+    text-align: left;
+}
+
+.MailPage .glyphicon {
+    float: right;
+    padding-left: 10px;
+}
+
+.MailPage .page {
+     text-align: center; 
+}
+
+.MailPage .page a{
+     color: #514f4f; 
+}
+
+.MailPage button.reply.btn.btn-primary {
+  text-align: center;
+  position: fixed;
+  bottom: 100px;
+  width: 70px;
+}
+
+.MailPage button.delete.btn.btn-primary {
+  text-align: center;
+  position: fixed;
+  bottom: 100px;
+  width: 70px;
+}
+
+

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/jdbc"/>
+	<classpathentry kind="lib" path="/Users/treexy1230/Documents/mysql-connector-java-5.1.22/mysql-connector-java-5.1.22-bin.jar"/>
+	<classpathentry kind="lib" path="/Users/treexy1230/Documents/servlets/javax.servlet-api-3.0.1.jar"/>
+	<classpathentry kind="lib" path="/Users/treexy1230/Documents/jetty/jetty-all-8.1.8.v20121106.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

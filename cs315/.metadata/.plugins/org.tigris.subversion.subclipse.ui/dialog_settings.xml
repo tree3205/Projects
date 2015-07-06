@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="387" key="ExportRemoteFolderDialog.location.x"/>
+	<item value="554" key="passwordStores.size.y"/>
+	<item value="266" key="ExportRemoteFolderDialog.location.y"/>
+	<item value="546" key="passwordStores.size.x"/>
+	<item value="238" key="ExportRemoteFolderDialog.size.y"/>
+	<item value="22" key="passwordStores.location.y"/>
+	<item value="447" key="passwordStores.location.x"/>
+	<item value="316" key="ExportRemoteFolderDialog.size.x"/>
+	<section name="NewLocationWizard">
+		<list key="ConfigurationWizardMainPage.STORE_URL_ID">
+			<item value="https://www.cs.usfca.edu/svn/omegatank"/>
+			<item value="https://www.cs.usfca.edu/svn/yxu66"/>
+			<item value="https://www.cs.usfca.edu/yxu66"/>
+		</list>
+	</section>
+</section>

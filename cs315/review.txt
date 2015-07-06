@@ -1,0 +1,22 @@
+1. The processor attempts to read the word at address 0x1000 D000 and the valid bit is 0.
+– The processor will send this address to the cache.
+– The cache will compute the cache index for this word, and see that the valid bit is 0. So
+   it will report a miss to the processor.
+– The processor will request the word from memory.
+– Memory will send the line containing this word to the cache.
+– The cache will compute the index and tag, store the line and tag in the appropriate
+  location, set the valid bit, and notify the processor that the line is available.
+– The processor will resend the address to the cache.
+– Now the cache will report a hit and send the requested word to the processor.
+2. The processor attempts to read the word at address 0x1000 D000 and the tags don’t match. This is basically the same as the preceding part, except the cache will initially report a miss when it sees that the tags don’t match.
+3. The processor attempts to write the word at address 0x1000 D000 and the tags don’t match. The cache is write-through and write- allocate.
+– The processor will send the word and address to cache.
+– The cache will see that the tags don’t match. So it will report a miss to the processor.
+– The processor will request the word from memory.
+– Memory will send the line containing the word to the cache.
+– Cache will attach a tag, store the line, set the valid bit, and notify the processor.
+– The processor will resend the word and address to cache.
+– Cache will update its line and send the word to memory, which will update the
+   appropriate location.
+4. The processor attempts to write the word at address 0x1000 D000 and the tags don’t match. The cache is write-through and no-write- allocate. In this setting, cache will simply send the word on to memory without modifying the cache.
+5. The processor attempts to write the word at address 0x1000 D000 and the valid bit is 0. The cache is write-back and write-allocate. This is basically the same as the write-through, write-allocate cache, except that after storing and updating the new line, the cache won’t send the word on to memory.

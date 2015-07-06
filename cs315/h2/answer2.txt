@@ -1,0 +1,49 @@
+2. Show how the pseudo instruction bgt can be implemented using ``core'' MIPS instructions -- instructions in the first column on page 1 of the MIPS Green Sheet. Recollect that the syntax of bgt is
+            bgt $reg0, $reg1, gt_lab
+         
+If the contents of $reg0 are greater than the contents of $reg1 control goes to the instruction with label gt_lab. If the contents of $reg0 are less than or equal to $reg1, control goes to the instruction following the bgt instruction.
+
+
+	.text
+	.globl	main
+main:
+	subu	$sp, $sp, 8	    # Make additional stack space.
+	sw	$ra, 4($sp)	    # Save the return address
+                                     
+	# Ask the OS to read a number and store it in memory.
+	li	$v0, 5		    # Code for read int.
+	syscall			    # Ask the system for service.
+	move    $t0, $v0	    # Put the input value in a safe
+                                    #    place
+
+	# Ask for another number.
+	li	$v0, 5		    # Code for read int.
+	syscall			    # Ask the system for service.
+	move    $t1, $v0	    # Put the input value in a safe
+                                    #    place
+
+        # Branch to appropriate print statement
+        slt	$t2, $t0, $t1	    # $t2 = 1 if $t0 < $t1.  Otherwise
+                                    # $t2 = 0 if st0 >= $t1
+        beq	$t2, $zero, Else    # go to Else if $t2 == 0, which means $t0 >= $t1
+        ...
+        j done                  
+
+Else:   bne  $t0, $t1, gt_lab	    # if $t0 != $t1, go to gt_lab
+	j done
+gt_lab:	
+	...
+               
+done:	# Restore the values from the stack, and release the stack space.
+	lw	$ra, 12($sp)	    # Retrieve the return address
+	addu	$sp, $sp, 16	    # Free up stack space.
+
+	# Return -- go to the address left by the caller.
+	#jr		$ra         # Can do this with SPIM
+                                    #   Breaks MARS
+
+    	# Exit system call:  this works with MARS and SPIM
+    	li      $v0, 10
+    	syscall
+
+

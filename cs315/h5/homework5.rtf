@@ -1,0 +1,169 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf190
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset128 HiraKakuProN-W3;\f2\fswiss\fcharset0 Helvetica-Light;
+\f3\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red38\green38\blue38;\red26\green26\blue26;\red56\green110\blue255;
+}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\})}{\leveltext\leveltemplateid1\'02\'00);}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\margl1440\margr1440\vieww14300\viewh11560\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\qc
+
+\f0\b\fs32 \cf0 Homework 5\
+yxu66\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b0\fs24 \cf0 \
+
+\b 2.24 [5] <\'a72.7> Suppose the program counter (PC) is set to 0x2000 0000. Is it possible to use the jump (j) MIPS assembly instruction to set the PC to the address as 0x4000 0000? Is it possible to use the branch-on-equal (beq) MIPS assembly instruction to set the PC to this same address?
+\b0 \
+\
+For the jump MIPS assembly instruction, we can\'92t do that. Because 0x4000 0000 - 0x2000 0000 = 0x2000 0000 = \cf2 536870912\
+\pard\pardeftab720
+\cf2 536870912 / 4 = \cf3 134217728 \cf2 < 2^28= \cf3 268435456\cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 For the beq MIPS assembly instruction, we can\'92t do that
+\f1 . 
+\f0 Because  0x4000 0000 - 0x2000 0000 = 0x2000 0000  = \cf2 536870912 \
+\pard\pardeftab720
+\cf2 536870912 / 4 = \cf3 134217728
+\f2  
+\f0 \cf0 > 2^18 = \CocoaLigature0 262144\CocoaLigature1 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \
+
+\b 2.40 [5] <\'a7\'a72.6, 2.10> If the current value of the PC is 0x00000000, can you use a single jump instruction to get to the PC address as shown in Exercise 2.39?\
+\
+
+\b0 Creates the 32-bit constant 0010 0000 0000 0001 0100 1001 0010 0100two and stores that value to register $t1 means need to store 0x2001 4924 into $t1.\
+Current address: 0x0000 0000 	\
+0010 0000 0000 0001 0100 1001 0010 0100two = 0x2001 4924(hex) \
+0x2001 4924 - 0x0000 0000 = \CocoaLigature0 0x2001 4924 = 536955172 \
+536955172  / 4 = 
+\f3 134238793
+\f0  <  2^28 =  \cf3 \CocoaLigature1 268435456\cf0 \CocoaLigature0  \CocoaLigature1 \
+	\
+So we can use a single j instruction to get the PC address.\
+\
+
+\b 2.41 [5] <\'a7\'a72.6, 2.10> If the current value of the PC is 0x00000600, can you use a single branch instruction to get to the PC address as shown in Exercise 2.39?
+\b0 \
+\
+current address: 0x00000600 			\
+0010 0000 0000 0001 0100 1001 0010 0100two = 0x2001 4924(hex) \
+0x2001 4924 - 0x0000 0600 = \CocoaLigature0 536953636\
+536953636 / 4 = 134238409 > 2^18 = 262144
+\f3\fs22 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f0\fs24 \cf0 So we cannot use branch instruction to get the PC address.\
+\
+
+\b 2.42 [5] <\'a7\'a72.6, 2.10> If the current value of the PC is 0x1FFFf000, can you use a single branch instruction to get to the PC address as shown in Exercise 2.39?\
+\
+
+\b0 Current address: 0x1FFFf000\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \CocoaLigature1 0010 0000 0000 0001 0100 1001 0010 0100two = 0x2001 4924(hex) \
+0x2001 4924 - \CocoaLigature0 0x1FFFf000 = 88356\
+88356 / 4 = 22089 < 2^18 = 262144\
+So we can use a single branch instruction to get the PC address\CocoaLigature1 	\
+		\CocoaLigature0 \
+\pard\pardeftab720
+
+\b \cf0 \CocoaLigature1 This {\field{\*\fldinst{HYPERLINK "https://www.cs.usfca.edu/~peter/cs315/solutions/linking-hw.pdf"}}{\fldrslt \cf4 \ul \ulc4 diagram}} shows the object files for two pairs of functions. Procedure A has a text size of 0x140 and a data size of of 0x40. Procedure B has a text size of 0x300 and a data size of 0x50. Show the executables created by the linker for these two pairs of procedures if the linker uses the memory layout shown in the {\field{\*\fldinst{HYPERLINK "http://www.cs.usfca.edu/~peter/cs315/MIPS_Green_Sheet.pdf"}}{\fldrslt \cf4 \ul \ulc4 MIPS Green sheet}}.\
+\pard\tx220\tx720\pardeftab720\li720\fi-720
+\ls1\ilvl0
+\b0 \cf0 {\listtext	1)	}From the information, we know:\
+\pard\pardeftab720
+\cf0 	Text of A:	0x0040 0000		lbu $a0, 0($gp)	#X\
+			0x0040 0004		jal 0			#B\
+			\'85\
+	Text of B:	0x0040 0140		sw $a1, 0($gp)	#Y\
+			0x0040 0144		jal 0			#A	\
+			\'85\
+	Data of A:	0x1000 0000		X\
+			\'85\
+			0x1000 0040		Y\
+			\'85\
+	offset = 0x1000 0000 - 0x1000 8000 = -0x8000 = 0xf8000 \
+	offset = 0x1000 0040 - 0x1000 8000 = -0x7fc0 \CocoaLigature0  = 0xf8040
+\b \CocoaLigature1 \
+	
+\b0 so excitable file:\
+	
+\b Excutable file header
+\b0 \
+	
+\b Text segment:
+\b0 	Text size:		0x440\
+				Data size:		0x90\
+				
+\b Address		Instruction
+\b0 \
+				0x0040 0000		lbu $a0, \ul 0xf8000\ulnone  \ul ($gp)\ulnone \
+				0x0040 0004		jal \ul 0x0040 0140\ulnone \
+				\'85\
+				0x0040 0140 	sw $a1, \ul \CocoaLigature0 0xf8040($gp)\ulnone \CocoaLigature1 \
+				0x0040 0144 	jal \ul 0x0040 0000\
+				\ulnone \'85\
+	
+\b Data segment:	Address\
+
+\b0 				0x1000 0000		X\
+				\'85\
+				0x1000 0040		Y\
+				\'85\
+\pard\tx720\pardeftab720
+\cf0    2)	The same as above:\
+\pard\pardeftab720
+\cf0 	Text of A:	0x0040 0000		lui $at, 0		#X\
+			0x0040 0004		ori $a0, $at, 0	#X\
+			\'85\
+			0x0040 0084		jr $ra			\
+			\'85\
+	Text of B:	0x0040 0140		sw $a0, \CocoaLigature0 0\CocoaLigature1 ($gp)	#Y\
+			0x0040 0144		jmp 0			#F00\
+			\'85\
+			0x0040 0180		jal 0			#A\
+	Data of A:	0x1000 0000		X\
+			\'85\
+			0x1000 0040		Y\
+			\'85	\
+\pard\tx720\pardeftab720
+\cf0 	
+\b Excutable file header
+\b0 \
+\pard\pardeftab720
+\cf0 	
+\b Text segment:
+\b0 	Text size:		0x440\
+				Data size:		0x90\
+				
+\b Address		Instruction
+\b0 \
+				0x0040 0000		lui $at, \ul 0x1000 0000\ulnone \
+				0x0040 0004		ori $a0, $at, \ul 0x1000 0000\ulnone \
+				\'85\
+				0x0040 0084		jr $ra\
+				\'85\
+				0x0040 0140 	sw $a0, 0xf8040($gp)\
+				0x0040 0144 	jmp \ul 0x0040 0180\ulnone \
+				\'85\
+				0x0040 0180		jal \ul 0x0040 0000\
+				\ulnone \'85\
+	
+\b Data segment:	Address\
+
+\b0 				0x1000 0000		X\
+				\'85\
+				0x1000 0040		Y\
+				\'85\
+	offset = 0x1000 0040 - 0x1000 8000 = -0x7fc0 =  0xf8040\CocoaLigature0 \
+	
+\b \CocoaLigature1 \
+\
+
+\b0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \
+}

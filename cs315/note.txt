@@ -1,0 +1,97 @@
+123 0 0   carries
+22 00   carries
+2691    factor 1 = 1 multiplicand 
+ X 43    factor 2 = 2 multiplier
+-------
+   21 0
+  8073     temp
+10764     temp
+---------
+115713
+
+M digits in multiplier  < 10^m
+N  digits in multiplier   < 10^n
+Largest possible # digits in product?
+
+Prod_dig = 3
+Prod_dig = 27
+Product   = 8073   < 10^m+n
+			m+n<=m+n +1 digits
+So the product of two unsigned decimal integers
+With m + n digits will have at most m+n digits
+
+Binary mult
+	11010
+X             101
+----------------
+          11010
+	       0
+     11010
+----------------
+10000010
+
+
+Product = 0;
+temp = multiplicand = fact1;
+For(bit2 = 0; bit2<bit_count;bit2++){
+	If(multiplier[bit2]!=0) Add(prod,temp);
+	Temp<< = 1; // left shift 1 bit
+}
+Largest 3 bit binary value
+111< 1000
+Largest 2 bit binary value
+11< 100
+
+1000
+X 100
+---------
+1000000
+ 3+2     <3 + 2 +1 bits
+Suppose we multiple an m bit binary unsigned by an n binary unsigned m what is the largest possible number of bits in the product ?
+Answer: m + n
+
+101 & 1
+How to extract the multiple[bits2]
+	- Multiplier & 1 for bits = 0
+	- Right shift  of multiplier ( fill highest bit with a 0)
+		○ Multiplier & 1 ==0
+			§ No add
+	- Right shift of multiplier 
+		○ 001
+		○ multiplier  & 1 ==1
+		○  carry out the add
+	- Product = 0;                                                       100 cycle total
+	- For(bit =0; bit< bit_count; bit++)                             32  passes
+	- {
+	-  if(multiplier  &1) Add(product, multiplicand);            1 cycle                 
+	- Multiplicand<< =1;              1 cycle
+	- multiplier >> = 1;                 1 cycle
+	- }
+	0000    produce
+	0111     multiplicand
+	0101    multiplier  
+-----------------
+       100011      
+			    pro           Mcand      pro          M'cand            M'plier
+Multiplier 0  =1         0000         0111         0111       01110              0010
+Multiplier 0 =0                                              0111        01111000       001
+Multiplier 0  =1        0111        011100      10011      01110000       0000
+Multiplier 0 =0                                              100011   01110000       0000
+---------------------
+How good is this algorithm?
+	What can we say about its runtime? Maybe 100 cycle?
+	Vs 1 or 2 for add and substract
+	Disastrous 
+	
+We also seem yo be wasting space with the 64 -multiplicand
+(which never has more than 32 bits nonzero) of the 64 bits ALU which will never add more thatn 32 bits of the multiplicand of product.
+Funfact: we can do the shift and the add in parallel.
+
+New hardware
+	-use 1 63 bits reg for product and multiplier
+	- Use a 32 bit ALU
+	- -use 32 bits for multiplicand 
+
+	 
+			     
+

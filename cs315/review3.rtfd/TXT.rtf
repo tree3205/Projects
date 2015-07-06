@@ -1,0 +1,162 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf190
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fswiss\fcharset0 ArialMT;\f2\fnil\fcharset128 HiraKakuProN-W3;
+\f3\froman\fcharset0 Times-Roman;}
+{\colortbl;\red255\green255\blue255;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat2\levelspace360\levelindent0{\*\levelmarker \{decimal\}.}{\leveltext\leveltemplateid1\'02\'00.;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720
+
+\f0\fs20 \cf0 If direct use of beq with branching determined in EX stage will result in 2 cycle stall for every branch while in ID stage will result in 1 cycle stall.\
+\pard\pardeftab720\sl216\slmult1
+\cf0 In a particular clock cycle, a pipeline stage is not doing useful work if it is stalled or if the instruction going through that stage is not doing any useful work there.\
+
+\b Beq $t0, $t1, equal\
+Add $t2, $t2, $t1\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 # full through\
+Equal: sub $t3, $t3, $t0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0 # "branch taken"\
+
+\f1\b0 1.Branch Prediction:predicting (always) that the branch taken. This will do the\'a0 "right" thing every time, except the last time: this will allow us to execute the program with no stalls -- until the last pass through the loop. When we make the wrong prediction, 
+\b we can determine it's wrong following\'a0 the ID stage of the branch.
+\b0  So incorrect instruction will have only complete the IF stage and we can just abort it: then make change to registers or memory(except PC) that needs to be modified.\
+2.Delay slot: try to insert an unrelated instruction between the branch instruction and the fall through or branch taken.
+\f0 \
+\
+\pard\pardeftab720
+\cf0 In this exercise, we assume that the following MIPS code is executed on a pipelined processor with a 5-stage pipeline, full forwarding, and a \ul predict-taken branch predictor\ulnone :\
+\'a0 \'a0\'a0lw r2, 0(r1)\
+label1: beq r2, r0, label2 # not taken once, then taken\
+\'a0\'a0\'a0 lw r3, 0(r2)\
+\'a0\'a0 \'a0beq r3, r0, label1 # taken\
+\'a0\'a0 \'a0add r1, r3, r1\
+\'a0label2: sw r1, 0(r2)\
+4.14.1 [10] <\'a74.8> Draw the pipeline execution diagram for this code, assuming there are no delay slots and that branches execute in the EX stage.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\fs24 \cf0 {{\NeXTGraphic Screen Shot 2014-05-11 at 3.23.45 PM.png \width5000 \height1400
+}¬}{{\NeXTGraphic Screen Shot 2014-05-11 at 3.24.19 PM.png \width4880 \height1560
+}¬}
+\fs20 XX\
+\pard\pardeftab720
+\cf0 4.14.2 [10] <\'a74.8> Repeat part a, but assume that delay slots are used. In the given code, the instruction that follows the branch is now the delay slot instruction for that branch.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\fs24 \cf0 {{\NeXTGraphic Screen Shot 2014-05-11 at 3.24.42 PM.png \width4320 \height1220
+}¬}
+\fs20     
+\fs24 {{\NeXTGraphic Screen Shot 2014-05-11 at 3.38.35 PM.png \width4720 \height1280
+}¬}
+\fs20 4.14.5 \
+\pard\pardeftab720
+\cf0 4.14.5 [10] <\'a74.8> For the given code, what is the speedup achieved by moving branch execution into the ID stage? Explain your answer. In your speedup calculation, assume that the additional comparison in the ID stage does not affect clock cycle time. 14/15 = 0.93\
+
+\b \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\b0\fs24 \cf0 {{\NeXTGraphic Screen Shot 2014-05-11 at 4.08.45 PM.png \width5060 \height1180
+}¬}
+\b\fs20 \
+\pard\pardeftab720
+
+\b0 \cf0 Directed-mapped cache: 2^10 lines in the cache, each line is a 32-bit word.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+\cf0 total num of bits in a directed mapped cache:2^n*(block size+tag size+valid field size) =\
+2^n*[2^(m+5)+(32-n-m-2)+1]\
+data storage: block size*cache column\
+
+\f1 The principle of temporal and spatial\'a0 locality. If you access memory location x at the time t, you are likely to access memory locations "near" x at times "near" t. (Empirically observed)\'a0\'a0Exploit this principle by loading blocks of data near x when we access x - instead of just loading x. Unit of access to cache is called a cache line or cache block.
+\f0 \
+
+\b \
+\pard\pardeftab720\sl216\slmult1
+
+\b0 \cf0 The 
+\b larger block size 
+\b0 may require an increased hit time and an increased miss penalty than the original cache. The 
+\b fewer number of blocks
+\b0  may cause a higher conflict miss rate than the original cache.The total number of take line in cache is so small, that it becomes more likely that an access will be a miss. 
+\b So larger \'a0caches have lower miss rates
+\b0 . With lower miss rate, we save time to access main memory that usually take longer time. However, we still need time to literate and looking for data in cache that may cost longer time. Thus, larger data size cache, might provide slower performance than the smaller cache!\
+Larger caches have lower miss rates.For relatively small line sizes, increasing line size reduces miss rate.For small caches, a large line size can increase the miss rate. In this situation the total number of lines in cache is so small that it becomes more likely that an access will be a miss.\
+\pard\pardeftab720\sl216\slmult1
+
+\b \cf0 \ul \ulc0 Early\'a0 restart: 
+\b0 \ulnone as soon\'a0 as the required word available in the cache, load it into a register proceed with execution and let the load of the rest of the line complete " in background"\'a0 If the word we need is the 1st word in the line, we' ll reduce our time requirement by a large factor.\
+If we add another bit to the line in cache, a bit that gets set any time the line is written, we'll know if the line was ever updated. This bit is called a 
+\b \ul dirty bit.
+\b0 \ulnone \
+
+\b \ul Split cache:
+\b0 \ulnone  cache divided into two smaller caches for instructions and data.\
+
+\b \ul Unified cache: 
+\b0 \ulnone cache storing both instructions and data.\
+The big win comes from having separate "pipe" for data and a separate "pipe" for instructions.\
+\pard\pardeftab720\sl216\slmult1
+\cf0 \
+\pard\pardeftab720
+\cf0 help find the optimal block size given the following miss rates for various block sizes.
+\b \
+8
+\f2\b0 \'81\'46
+\f0\b 4%
+\b0    
+\b 16
+\f2\b0 \'81\'46
+\f0\b 3%
+\b0      
+\b 32
+\f2\b0 \'81\'46
+\f0\b 2%
+\b0     
+\b 64
+\f2\b0 \'81\'46
+\f0\b 1.5%
+\b0     
+\b 128
+\f2\b0 \'81\'46
+\f0\b 1%\
+
+\b0 Miss cycles per reference = cycles per miss * misses per reference\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\fs24 \cf0 {{\NeXTGraphic Screen Shot 2014-05-11 at 5.32.52 PM.png \width3020 \height1000
+}¬}
+\fs20 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\ls1\ilvl0
+\fs24 \cf0 {{\NeXTGraphic Screen Shot 2014-05-12 at 12.02.38 AM.png \width4940 \height4180
+}¬}\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\ls1\ilvl0
+\fs20 \cf0 \
+\pard\pardeftab720\sl216\slmult1
+\ls1\ilvl0
+\b \cf0 show the final cache contents for a three-way set associative cache with two-word blocks and a total size of 24 words. Use LRU replacement. For each reference identify the index bits, the tag bits, the block offset bits, and if it is a hit or a miss.
+\b0 \
+Note that the given addresses are word addresses. So there is no byte offset in the given addresses (and we won\'92t use one). Also note that the largest address, 253, is less than 256 = 2\up10 8\up0 . So we\'92ll only use 8 bits for the binary word address and the full tag should have an additional 22 bits.Since the line size is 2 words, and the cache size is 24 words, the cache can store a maximum of 24/2 = 12 lines. Since the cache is 3-way set associative, each set can store 3 lines, and the total number of sets is 12/3 = 4. So we need 1 bit for the word offset, 2 bits for the set index, and in the 8 bit addresses we use, the remaining 5 bits will be the tag. Thus, the given addresses will be mapped as left. If the set isn\'92t full, we just use the first available location or way. If the set is full, we replace the line least recently used. Right is the final state of the cache. \
+Increasing associativity affect miss rate? Decrease
+\f3 \
+\pard\pardeftab720\sl216\slmult1
+\ls1\ilvl0
+\f0\b \cf0 \ul \ulc0 Collision\ulnone : 
+\b0 so we must evict one line from the set. Ideally we would evict the line in the set that was least recently used(LRU).If n = number of lines that can be stored in the cache, the cache is 
+\b fully associative
+\b0 .
+\f3 \
+\pard\pardeftab720\sa240
+\ls1\ilvl0
+\f0\fs24 \cf0 {{\NeXTGraphic Screen Shot 2014-05-11 at 6.14.35 PM.png \width5160 \height3380
+}¬}\ls1\ilvl0
+\fs20   
+\fs24 {{\NeXTGraphic Screen Shot 2014-05-11 at 6.18.59 PM.png \width4100 \height1720
+}¬}
+\fs20 \
+\
+\ls1\ilvl0
+\f1\b \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural
+
+\b0 \cf0 \
+}

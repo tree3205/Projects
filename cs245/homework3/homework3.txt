@@ -1,0 +1,59 @@
+ 1. 1                A
+		      /             \
+	      B                   C
+	    /  \             /        \
+	NULL NULL           D           E
+			        /    \         /    \
+			       NULL  NULL       NULL  NULL
+
+
+1.2                A
+		    /            \
+	     NULL  		       B
+	    		      /        \  
+			      C             NULL  
+			   /    \        
+			NULL      D  
+				   /     \
+			      E       NULL
+			   /	 \
+			 NULL   NULL
+
+
+1.3                A
+		     /           \
+		 B                    C
+       /    \               /      \
+	NULL       D           E       NULL
+		/     \	        /      \
+	  NULL    NULL     NULL     F
+				      /	   \
+			        NULL   NULL
+
+
+2.1              A
+	           /        
+		      B
+	    	/
+	      C
+	    /
+      D
+	/
+   E
+
+
+2.2                       A
+		        /      /     \      \
+              B         C       D     E
+                   			 /    \
+				   			F      G
+					 			/
+					   		H
+
+
+2.3                  A
+			     /       \
+               B            C
+   		   /    \         /   \
+		  D      E      F      G
+				
