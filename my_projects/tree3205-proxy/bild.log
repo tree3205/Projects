@@ -1,0 +1,115 @@
+[03/10/15 00:50:28 <module> bild.py:15 bilder.py:124] platform=darwin
+[03/10/15 00:50:28 <module> bild.py:15 bilder.py:125] jdk={'1.6': '/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home', '1.7': '/Library/Java/JavaVirtualMachines/jdk1.7.0_67.jdk/Contents/Home'}
+[03/10/15 00:50:28] require compile
+[03/10/15 00:50:28 require bild.py:22 bilder.py:422] require compile
+[03/10/15 00:50:28] build launch_proxy
+[03/10/15 00:50:28 require bild.py:22 bilder.py:430] build launch_proxy
+[03/10/15 00:50:28 wget bild.py:31 bilder.py:713] wget -r --wait=0 --keep-session-cookies -q -P /tmp/wo --proxy=off --level 1 http://www.cs.usfca.edu/index.html
+[03/10/15 00:50:30 wget bild.py:32 bilder.py:713] wget -r --wait=0 --keep-session-cookies -q -P /tmp/w --proxy=on --level 1 http://www.cs.usfca.edu/index.html
+[03/10/15 00:50:31 diff bild.py:33 bilder.py:726] diff -r /tmp/wo /tmp/w
+[03/10/15 00:50:31 wget bild.py:31 bilder.py:713] wget -r --wait=0 --keep-session-cookies -q -P /tmp/wo --proxy=off --level 1 http://www.github.com
+[03/10/15 00:50:32 wget bild.py:32 bilder.py:713] wget -r --wait=0 --keep-session-cookies -q -P /tmp/w --proxy=on --level 1 http://www.github.com
+[03/10/15 00:50:33 diff bild.py:33 bilder.py:726] diff -r /tmp/wo /tmp/w
+[03/10/15 00:50:33 wget bild.py:31 bilder.py:713] wget -r --wait=0 --keep-session-cookies -q -P /tmp/wo --proxy=off --level 1 http://www.cnn.com
+[03/10/15 00:51:22 wget bild.py:31 bilder.py:713] pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+[03/10/15 00:51:22 wget bild.py:32 bilder.py:713] wget -r --wait=0 --keep-session-cookies -q -P /tmp/w --proxy=on --level 1 http://www.cnn.com
+[03/10/15 00:52:05 wget bild.py:32 bilder.py:713] pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+pathconf: Not a directory
+[03/10/15 00:52:05 diff bild.py:33 bilder.py:726] diff -r /tmp/wo /tmp/w
