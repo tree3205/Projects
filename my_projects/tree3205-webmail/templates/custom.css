@@ -1,0 +1,715 @@
+/*For login page*/
+
+.Login {    
+    background-image: url("mail.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.Login .img-responsive {
+    position: absolute;
+    top: 30px;
+    right: 20px;
+}
+
+.Login h1 {
+    color: #298edb;
+    font-size: 500%;
+}
+
+.Login p {
+    font-size: 120%;
+}
+
+/*For home page*/
+.Home {
+    background-color: #f5f5f5;
+    background-repeat: no-repeat;
+}
+
+.Home .navbar {
+    background-color: #b4b7ba;
+}
+
+.Home .welcome {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    height: 45px;
+    width: 250px;
+}
+
+.Home .navbar .nav a {
+    color: #ffffff;
+}
+
+.Home a {
+    color: #7f7e7e;
+}
+
+.Home .nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+    background-color: #717070;
+}
+
+.Home .compose {
+    position: relative;
+    left: 6%;
+    text-align: left;
+    line-height: 60%;
+}
+
+.Home .check {
+    position: relative;
+    left: 6%;
+    text-align: left;
+    line-height: 60%;
+}
+
+.Home .add {
+    position: relative;
+    left: 6%;
+    text-align: left;
+    line-height: 60%;
+}
+
+.Home .rename {
+    position: relative;
+    left: 6%;
+    text-align: left;
+    line-height: 60%;
+}
+
+.Home .btn {
+    background-color: #b4b7ba;
+    color: #ffffff;
+    width: 80%;
+    text-align: left;
+}
+
+.Home button.sendMail{
+  width: 60px;
+}
+
+.Home button.delete{
+  width: 60px;
+}
+
+.Home .btn-xs {
+    left: -3%;
+    text-align: left;
+}
+
+.Home .glyphicon {
+    float: right;
+    padding-left: 10px;
+}
+
+.Home .page a{
+     color: #514f4f; 
+}
+
+.Home ul.pagination.pagination {
+  position: fixed;
+  bottom: 15px;
+}
+
+.Home button#myFolder {
+  position: relative;
+  width: 185px;
+  left: 13px;
+}
+
+.Home ul.dropdown-menu.pull-left {
+  left: 13px;
+}
+
+/*For Register Page*/
+.Register {
+    background-image: url("register.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.Register .welcome{
+    width: 150px;
+}
+
+
+.Register .btn {
+    width: 200px;
+}
+
+/*For add Mail page*/
+.AddMail {
+    background-image: url("register.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+/*For MailPage*/
+.MailPage {
+    background-color: #f5f5f5;
+    background-repeat: no-repeat;
+}
+
+.MailPage .navbar {
+    background-color: #b4b7ba;
+}
+
+.MailPage .welcome {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    height: 45px;
+    width: 250px;
+}
+
+.MailPage .navbar .nav a {
+    color: #ffffff;
+}
+
+.MailPage a {
+    color: #7f7e7e;
+}
+
+.MailPage .nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+    background-color: #717070;
+}
+
+.MailPage .compose {
+    position: relative;
+    left: 6%;
+    text-align: left;
+    line-height: 60%;
+}
+
+.MailPage .check {
+    position: relative;
+    left: 6%;
+    text-align: left;
+    line-height: 60%;
+}
+
+.MailPage .add {
+    position: relative;
+    left: 6%;
+    text-align: left;
+    line-height: 60%;
+}
+
+.MailPage .rename {
+    position: relative;
+    left: 6%;
+    text-align: left;
+    line-height: 60%;
+}
+
+.MailPage .btn {
+    background-color: #b4b7ba;
+    color: #ffffff;
+    width: 80%;
+    text-align: left;
+}
+
+.MailPage button.sendMail{
+  width: 60px;
+}
+
+.MailPage .btn-xs {
+    left: -3%;
+    text-align: left;
+}
+
+.MailPage .glyphicon {
+    float: right;
+    padding-left: 10px;
+}
+
+.MailPage .page {
+    text-align: center; 
+    position: fixed;
+    bottom: 20px;
+}
+
+.MailPage .page a{
+     color: #514f4f; 
+}
+
+.MailPage button.reply.btn.btn-primary {
+  text-align: center;
+  position: fixed;
+  bottom: 100px;
+  width: 70px;
+}
+
+.MailPage button.delete.btn.btn-primary {
+  text-align: center;
+  position: fixed;
+  bottom: 100px;
+  width: 70px;
+}
+
+.MailPage button#myFolder {
+  position: relative;
+  width: 185px;
+  left: 13px;
+}
+
+.MailPage ul.dropdown-menu.pull-left {
+  left: 13px;
+}
+
+.MailPage button#saveTo {
+  text-align: center;
+  position: fixed;
+  bottom: 700px;
+  right: 100px;
+  width: 110px;
+  height: 35px;
+}
+.MailPage ul.dropdown-menu.pull-right {
+    position: fixed;
+    top: 105px;
+    right: 50px;
+}
+
+/*For Trash page*/
+.Trash {
+    background-color: #f5f5f5;
+    background-repeat: no-repeat;
+}
+
+.Trash .navbar {
+    background-color: #b4b7ba;
+}
+
+.Trash .welcome {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    height: 45px;
+    width: 250px;
+}
+
+.Trash .navbar .nav a {
+    color: #ffffff;
+}
+
+.Trash a {
+    color: #7f7e7e;
+}
+
+.Trash .nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+    background-color: #717070;
+}
+
+.Trash .compose {
+    position: relative;
+    left: 6%;
+    text-align: left;
+    line-height: 60%;
+}
+
+.Trash .check {
+    position: relative;
+    left: 6%;
+    text-align: left;
+    line-height: 60%;
+}
+
+.Trash .add {
+    position: relative;
+    left: 6%;
+    text-align: left;
+    line-height: 60%;
+}
+
+.Trash .rename {
+    position: relative;
+    left: 6%;
+    text-align: left;
+    line-height: 60%;
+}
+
+.Trash .btn {
+    background-color: #b4b7ba;
+    color: #ffffff;
+    width: 80%;
+    text-align: left;
+}
+
+.Trash button.sendMail{
+  width: 60px;
+}
+
+.Trash button.delete{
+  width: 60px;
+}
+
+.Trash .btn-xs {
+    left: -3%;
+    text-align: left;
+}
+
+.Trash .glyphicon {
+    float: right;
+    padding-left: 10px;
+}
+
+.Trash .page a{
+     color: #514f4f; 
+}
+
+.Trash ul.pagination.pagination {
+  position: fixed;
+  bottom: 15px;
+}
+
+.Trash button#myFolder {
+  position: relative;
+  width: 185px;
+  left: 13px;
+}
+
+.Trash ul.dropdown-menu.pull-left {
+  left: 13px;
+}
+
+/*For Send page*/
+.SendMail {
+    background-color: #f5f5f5;
+    background-repeat: no-repeat;
+}
+
+.SendMail .navbar {
+    background-color: #b4b7ba;
+}
+
+.SendMail .welcome {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    height: 45px;
+    width: 250px;
+}
+
+.SendMail .navbar .nav a {
+    color: #ffffff;
+}
+
+.SendMail a {
+    color: #7f7e7e;
+}
+
+.SendMail .nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+    background-color: #717070;
+}
+
+.SendMail .compose {
+    position: relative;
+    left: 6%;
+    text-align: left;
+    line-height: 60%;
+}
+
+.SendMail .check {
+    position: relative;
+    left: 6%;
+    text-align: left;
+    line-height: 60%;
+}
+
+.SendMail .add {
+    position: relative;
+    left: 6%;
+    text-align: left;
+    line-height: 60%;
+}
+
+.SendMail .rename {
+    position: relative;
+    left: 6%;
+    text-align: left;
+    line-height: 60%;
+}
+
+.SendMail .btn {
+    background-color: #b4b7ba;
+    color: #ffffff;
+    width: 80%;
+    text-align: left;
+}
+
+.SendMail button.sendMail{
+  width: 60px;
+}
+
+.SendMail button.delete{
+  width: 60px;
+}
+
+.SendMail .btn-xs {
+    left: -3%;
+    text-align: left;
+}
+
+.SendMail .glyphicon {
+    float: right;
+    padding-left: 10px;
+}
+
+.SendMail .page {
+     text-align: center; 
+}
+
+.SendMail .page a{
+     color: #514f4f; 
+}
+
+.SendMail button.send.btn.btn-primary {
+  text-align: center;
+  position: fixed;
+  bottom: 70px;
+  width: 70px;
+}
+
+.SendMail button#myFolder {
+  position: relative;
+  width: 185px;
+  left: 13px;
+}
+
+.SendMail ul.dropdown-menu.pull-left {
+  left: 13px;
+}
+
+/*For Outbox page*/
+.Outbox {
+    background-color: #f5f5f5;
+    background-repeat: no-repeat;
+}
+
+.Outbox .navbar {
+    background-color: #b4b7ba;
+}
+
+.Outbox .welcome {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    height: 45px;
+    width: 250px;
+}
+
+.Outbox .navbar .nav a {
+    color: #ffffff;
+}
+
+.Outbox a {
+    color: #7f7e7e;
+}
+
+.Outbox .nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+    background-color: #717070;
+}
+
+.Outbox .compose {
+    position: relative;
+    left: 6%;
+    text-align: left;
+    line-height: 60%;
+}
+
+.Outbox .check {
+    position: relative;
+    left: 6%;
+    text-align: left;
+    line-height: 60%;
+}
+
+.Outbox .add {
+    position: relative;
+    left: 6%;
+    text-align: left;
+    line-height: 60%;
+}
+
+.Outbox .rename {
+    position: relative;
+    left: 6%;
+    text-align: left;
+    line-height: 60%;
+}
+
+.Outbox .btn {
+    background-color: #b4b7ba;
+    color: #ffffff;
+    width: 80%;
+    text-align: left;
+}
+
+.Outbox button.sendMail{
+  width: 60px;
+}
+
+.Outbox button.delete{
+  width: 60px;
+}
+
+.Outbox .btn-xs {
+    left: -3%;
+    text-align: left;
+}
+
+.Outbox .glyphicon {
+    float: right;
+    padding-left: 10px;
+}
+
+.Outbox .page a{
+     color: #514f4f; 
+}
+
+.Outbox ul.pagination.pagination {
+  position: fixed;
+  bottom: 15px;
+}
+
+.Outbox button#myFolder {
+  position: relative;
+  width: 185px;
+  left: 13px;
+}
+
+.Outbox ul.dropdown-menu.pull-left {
+  left: 13px;
+}
+
+/*For change pwd*/
+.Changepwd {
+    background-image: url("register.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.Changepwd .change {
+    top: 60px;
+}
+
+.Changepwd .save {
+    text-align: center;
+}
+
+/*For different folder page*/
+.Folder {
+    background-color: #f5f5f5;
+    background-repeat: no-repeat;
+}
+
+.Folder .navbar {
+    background-color: #b4b7ba;
+}
+
+.Folder .welcome {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    height: 45px;
+    width: 250px;
+}
+
+.Folder .navbar .nav a {
+    color: #ffffff;
+}
+
+.Folder a {
+    color: #7f7e7e;
+}
+
+.Folder .nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+    background-color: #717070;
+}
+
+.Folder .compose {
+    position: relative;
+    left: 6%;
+    text-align: left;
+    line-height: 60%;
+}
+
+.Folder .check {
+    position: relative;
+    left: 6%;
+    text-align: left;
+    line-height: 60%;
+}
+
+.Folder .add {
+    position: relative;
+    left: 6%;
+    text-align: left;
+    line-height: 60%;
+}
+
+.Folder .rename {
+    position: relative;
+    left: 6%;
+    text-align: left;
+    line-height: 60%;
+}
+
+.Folder .btn {
+    background-color: #b4b7ba;
+    color: #ffffff;
+    width: 80%;
+    text-align: left;
+}
+
+.Folder button.sendMail{
+  width: 60px;
+}
+
+.Folder button.delete{
+  width: 60px;
+}
+
+.Folder .btn-xs {
+    left: -3%;
+    text-align: left;
+}
+
+.Folder .glyphicon {
+    float: right;
+    padding-left: 10px;
+}
+
+.Folder .page a{
+     color: #514f4f; 
+}
+
+.Folder ul.pagination.pagination {
+  position: fixed;
+  bottom: 15px;
+}
+
+.Folder button#myFolder {
+  position: relative;
+  width: 185px;
+  left: 13px;
+}
+
+.Folder ul.dropdown-menu.pull-left {
+  left: 13px;
+}
